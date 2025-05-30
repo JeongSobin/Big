@@ -1,34 +1,54 @@
-// PWA 서비스 워커 등록
+// 서비스 워커 등록
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-    .then(() => console.log('SW registered'))
-    .catch(console.error);
+  navigator.serviceWorker.register('/service-worker.js');
 }
 
-// 화면 전환 함수
+// showScreen 함수
 function showScreen(id) {
-  document.querySelectorAll('.screen')
-    .forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.screen').forEach(el => {
+    el.classList.remove('active');
+  });
   document.getElementById(id).classList.add('active');
 }
 
-// ① 앱 시작 스플래시 → 3초 후 로그인 화면
+// ① DOMContentLoaded: 3초 뒤 로그인으로
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => showScreen('login-screen'), 3000);
 });
 
-// ② 로그인 폼 처리
-const loginForm = document.getElementById('login-form');
-loginForm.addEventListener('submit', e => {
+// ② 로그인 처리
+document.getElementById('login-form').addEventListener('submit', e => {
   e.preventDefault();
-  const id = document.getElementById('user-id').value.trim();
-  const pw = document.getElementById('user-pw').value.trim();
-
-  // 예시 인증 (원하는 로직으로 교체)
+  const id = document.getElementById('user-id').value;
+  const pw = document.getElementById('user-pw').value;
   if (id === 'test' && pw === '1234') {
     alert('로그인 성공!');
-    // 이후 원하는 화면으로 전환하거나 로직 추가 가능
+    showScreen('home-screen');
+    history.pushState({screen:'home'}, '', '#home');
+    // 위치 권한 요청 예시
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        pos => console.log(pos.coords),
+        err => console.warn(err)
+      );
+    }
   } else {
     alert('아이디 또는 비밀번호가 잘못되었습니다.');
   }
+});
+
+// ③ 홈<->설정 화면 전환
+document.getElementById('goto-settings').addEventListener('click', () => {
+  showScreen('settings-screen');
+  history.pushState({screen:'settings'}, '', '#settings');
+});
+document.getElementById('goto-home').addEventListener('click', () => {
+  showScreen('home-screen');
+  history.pushState({screen:'home'}, '', '#home');
+});
+
+// 뒤로가기 이벤트
+window.addEventListener('popstate', e => {
+  const s = e.state?.screen || 'login';
+  showScreen(s + '-screen');
 });
