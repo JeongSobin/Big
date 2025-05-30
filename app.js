@@ -13,7 +13,7 @@ function showScreen(id) {
 
 // ① DOMContentLoaded: 3초 뒤 로그인으로
 document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => showScreen('login-screen'), 3000);
+  setTimeout(() => showScreen('login-screen'), 3);
 });
 
 // ② 로그인 처리
