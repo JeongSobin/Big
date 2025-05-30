@@ -1,31 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  max-width: 500px;
-  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f5f5f5;
   font-family: sans-serif;
 }
-h1 {
+
+.login-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 300px;
   text-align: center;
 }
-form {
+
+.login-container h1 {
+  margin-bottom: 1.5rem;
+}
+
+#login-form {
   display: flex;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 1rem;
 }
-input {
-  flex: 1;
-  padding: 0.5rem;
+
+#login-form input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
-button {
-  padding: 0.5rem 1rem;
-}
-li {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #ddd;
-}
-li button {
-  background: none;
+
+#login-form button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  background: #007bff;
+  color: #fff;
   border: none;
-  color: red;
+  border-radius: 4px;
   cursor: pointer;
+}
+
+#login-form button:hover {
+  background: #0056b3;
+}
+
+.links {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.links a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
 }
