@@ -1,49 +1,27 @@
-const form  = document.getElementById('todo-form');
-const input = document.getElementById('todo-input');
-const list  = document.getElementById('todo-list');
+// 1) 스플래시 화면 띄우기 & 3초 뒤에 로그인 화면으로 전환
+document.addEventListener('DOMContentLoaded', () => {
+  const splash = document.getElementById('splash');
+  const login = document.getElementById('login-screen');
 
-// 1) Service Worker 등록 (PWA 핵심)
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
-    .then(() => console.log('SW registered'))
-    .catch(console.error);
-}
-
-// 2) 로컬스토리지에서 불러오기
-let todos = JSON.parse(localStorage.getItem('todos') || '[]');
-render();
-
-// 3) 할 일 추가
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  todos.push(input.value);
-  input.value = '';
-  saveAndRender();
+  // 3초 뒤에 스플래시 숨기고 로그인 보이기
+  setTimeout(() => {
+    splash.classList.add('hidden');
+    login.classList.remove('hidden');
+  }, 3000);
 });
 
-// 4) 할 일 삭제
-list.addEventListener('click', e => {
-  if (e.target.tagName === 'BUTTON') {
-    const idx = e.target.dataset.idx;
-    todos.splice(idx, 1);
-    saveAndRender();
+// 2) 로그인 폼 처리 (여기서는 단순 예시)
+const loginForm = document.getElementById('login-form');
+loginForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const id = document.getElementById('user-id').value;
+  const pw = document.getElementById('user-pw').value;
+
+  // TODO: 실제 인증 로직 필요 (예: 서버 요청)
+  if (id === 'test' && pw === '1234') {
+    alert('로그인 성공!');
+    // 로그인 후 다음 화면으로 이동하거나 토큰 저장 등 처리
+  } else {
+    alert('아이디 또는 비밀번호가 잘못되었습니다.');
   }
 });
-
-function saveAndRender() {
-  localStorage.setItem('todos', JSON.stringify(todos));
-  render();
-}
-
-function render() {
-  list.innerHTML = '';
-  todos.forEach((todo, i) => {
-    const li = document.createElement('li');
-    li.textContent = todo;
-    const btn = document.createElement('button');
-    btn.textContent = '❌';
-    btn.dataset.idx = i;
-    li.appendChild(btn);
-    list.appendChild(li);
-  });
-}
