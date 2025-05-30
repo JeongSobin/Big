@@ -1,26 +1,33 @@
-// 1) 스플래시 화면 띄우기 & 3초 뒤에 로그인 화면으로 전환
-document.addEventListener('DOMContentLoaded', () => {
-  const splash = document.getElementById('splash');
-  const login = document.getElementById('login-screen');
+// PWA 서비스 워커 등록
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(() => console.log('SW registered'))
+    .catch(console.error);
+}
 
-  // 3초 뒤에 스플래시 숨기고 로그인 보이기
-  setTimeout(() => {
-    splash.classList.add('hidden');
-    login.classList.remove('hidden');
-  }, 3000);
+// 화면 전환 함수
+function showScreen(id) {
+  document.querySelectorAll('.screen')
+    .forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+// ① 앱 시작 스플래시 → 3초 후 로그인 화면
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => showScreen('login-screen'), 3000);
 });
 
-// 2) 로그인 폼 처리 (여기서는 단순 예시)
+// ② 로그인 폼 처리
 const loginForm = document.getElementById('login-form');
 loginForm.addEventListener('submit', e => {
   e.preventDefault();
-  const id = document.getElementById('user-id').value;
-  const pw = document.getElementById('user-pw').value;
+  const id = document.getElementById('user-id').value.trim();
+  const pw = document.getElementById('user-pw').value.trim();
 
-  // TODO: 실제 인증 로직 필요 (예: 서버 요청)
+  // 예시 인증 (원하는 로직으로 교체)
   if (id === 'test' && pw === '1234') {
     alert('로그인 성공!');
-    // 로그인 후 다음 화면으로 이동하거나 토큰 저장 등 처리
+    // 이후 원하는 화면으로 전환하거나 로직 추가 가능
   } else {
     alert('아이디 또는 비밀번호가 잘못되었습니다.');
   }
