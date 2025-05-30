@@ -95,3 +95,15 @@ li button {
   color: red;
   cursor: pointer;
 }
+
+/* ===== 화면 전환용 공통 클래스 ===== */
+.screen {
+  display: none;
+}
+.screen.active {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+
