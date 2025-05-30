@@ -23,8 +23,8 @@
     </div>
   </div>
 
+  <!-- 서비스워커 자동 등록 -->
   <script>
-    // service-worker 등록
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./service-worker.js');
     }
