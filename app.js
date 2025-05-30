@@ -1,3 +1,5 @@
+console.log('✅ app.js 로드됨');
+
 // 서비스 워커 등록 (PWA 필수)
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js')
