@@ -1,6 +1,6 @@
 // 서비스 워커 등록 (PWA 필수)
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js')
+  navigator.serviceWorker.register('service-worker.js')
     .then(() => console.log('SW registered'))
     .catch(console.error);
 }
