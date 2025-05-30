@@ -1,10 +1,12 @@
 const CACHE = 'pwa-cache-v1';
 const ASSETS = [
-  '/', '/index.html',
-  '/style.css', '/app.js',
-  '/manifest.json',
-  '/icon-192.png',
-  '/icon-512.png'
+  './',             // the root of this site (same as index.html)
+  'index.html',
+  'style.css',
+  'app.js',
+  'manifest.json',
+  'icon-192.png',
+  'icon-512.png'
 ];
 
 self.addEventListener('install', e =>
