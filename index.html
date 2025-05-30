@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>로그인 + 위치 동의 예제</title>
+  <title>로그인 → 메인</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -24,12 +24,50 @@
     </div>
   </div>
 
-  <!-- 홈 화면: 로그인 성공 시 전환 -->
-  <div id="home-screen" class="screen">
-    <div class="login-container">
-      <h1>홈 화면</h1>
-      <p>위치 동의 팝업을 확인해 보세요.</p>
-    </div>
+  <!-- 메인 화면 -->
+  <div id="main-screen" class="screen">
+    <!-- 상단 배너: 카테고리 & 검색 + 위치 -->
+    <header class="main-header">
+      <div class="banner">
+        <span class="category">카테고리</span>
+        <span class="search-bar">🔍 검색</span>
+      </div>
+      <div class="location-display">
+        위치: <span id="user-location">허가 대기 중...</span>
+      </div>
+      <div class="top-icons">
+        <button class="icon">🔔</button>
+        <button class="icon">🔍</button>
+        <button class="icon">❤️</button>
+      </div>
+    </header>
+
+    <!-- 광고 영역 -->
+    <section class="advertisement">
+      광고 배너 자리
+    </section>
+
+    <!-- 상품 목록 -->
+    <section class="product-list">
+      <div class="product-item">
+        <div class="name">제품 A</div>
+        <div class="price">10,000원</div>
+        <div class="loc">서울시 강남구</div>
+      </div>
+      <div class="product-item">
+        <div class="name">제품 B</div>
+        <div class="price">20,000원</div>
+        <div class="loc">서울시 종로구</div>
+      </div>
+      <!-- 필요만큼 복제 -->
+    </section>
+
+    <!-- 하단 네비게이션 -->
+    <nav class="bottom-nav">
+      <button>홈</button>
+      <button>채팅</button>
+      <button>마이페이지</button>
+    </nav>
   </div>
 
   <script src="app.js" defer></script>
