@@ -1,24 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My PWA App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
 <body>
-  <!-- 로그인 화면 -->
-  <div id="login-screen" class="screen">
-    <!-- (이전 예제의 로그인 폼) -->
+  <!-- ① 스플래시 화면 -->
+  <div id="splash">
+    <img src="icons/icon-192.png" alt="앱 로고" class="splash-logo">
+    <p class="splash-text">Loading…</p>
+  </div>
+
+  <!-- ② 로그인 화면 -->
+  <div id="login-screen" class="hidden">
     <h1>로그인</h1>
-    <form id="login-form"> … </form>
-    <div class="links"> … </div>
-  </div>
-
-  <!-- 메인 화면 -->
-  <div id="home-screen" class="screen hidden">
-    <h1>홈</h1>
-    <p>환영합니다!</p>
-    <button id="goto-settings">설정으로</button>
-  </div>
-
-  <!-- 설정 화면 -->
-  <div id="settings-screen" class="screen hidden">
-    <h1>설정</h1>
-    <button id="goto-home">홈으로</button>
+    <form id="login-form">
+      <input type="text" id="user-id" placeholder="아이디" required>
+      <input type="password" id="user-pw" placeholder="비밀번호" required>
+      <button type="submit">로그인</button>
+    </form>
+    <div class="links">
+      <a href="#">아이디/비밀번호 찾기</a> |
+      <a href="#">회원가입</a>
+    </div>
   </div>
 
   <script src="app.js" defer></script>
 </body>
+</html>
