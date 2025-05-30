@@ -1,23 +1,21 @@
-/* 공통 숨김 처리 */
-.hidden {
-  display: none;
-}
+/* 화면 전환용 공통 클래스 */
+.screen { display: none; }
+.screen.active { display: block; }
 
-/* 스플래시 화면 전체 */
-#splash {
+/* 스플래시 화면 */
+#splash-screen {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: #ffffff;
+  background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
 }
 .splash-logo {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
 }
 .splash-text {
   margin-top: 1rem;
@@ -27,39 +25,46 @@
 
 /* 로그인 화면 */
 #login-screen {
-  max-width: 320px;
-  margin: 3rem auto;
-  padding: 1.5rem;
+  max-width: 360px;
+  margin: 4rem auto;
+  padding: 2rem;
   border: 1px solid #ddd;
   border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   font-family: sans-serif;
 }
 #login-screen h1 {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 #login-screen form {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 #login-screen input {
-  padding: 0.5rem;
+  padding: 0.75rem;
   font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 #login-screen button {
-  padding: 0.6rem;
+  padding: 0.75rem;
   font-size: 1rem;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  border-radius: 4px;
   cursor: pointer;
 }
 #login-screen .links {
   text-align: center;
   margin-top: 1rem;
+  font-size: 0.9rem;
 }
 #login-screen .links a {
   color: #007bff;
   text-decoration: none;
-  font-size: 0.9rem;
 }
 #login-screen .links a:hover {
   text-decoration: underline;
