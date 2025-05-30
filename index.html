@@ -3,20 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>로그인 화면</title>
+  <title>로그인 + 위치 동의 예제</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="login-container">
-    <h1>로그인</h1>
-    <form id="login-form">
-      <input type="text"     id="user-id" placeholder="아이디"     required />
-      <input type="password" id="user-pw" placeholder="비밀번호" required />
-      <button type="submit">로그인</button>
-    </form>
-    <div class="links">
-      <a href="#">아이디/비밀번호 찾기</a> |
-      <a href="#">회원가입</a>
+
+  <!-- 로그인 화면 -->
+  <div id="login-screen" class="screen active">
+    <div class="login-container">
+      <h1>로그인</h1>
+      <form id="login-form">
+        <input type="text"     id="user-id" placeholder="아이디"     required />
+        <input type="password" id="user-pw" placeholder="비밀번호" required />
+        <button type="submit">로그인</button>
+      </form>
+      <div class="links">
+        <a href="#">아이디/비밀번호 찾기</a> |
+        <a href="#">회원가입</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 홈 화면: 로그인 성공 시 전환 -->
+  <div id="home-screen" class="screen">
+    <div class="login-container">
+      <h1>홈 화면</h1>
+      <p>위치 동의 팝업을 확인해 보세요.</p>
     </div>
   </div>
 
