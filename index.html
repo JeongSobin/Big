@@ -9,14 +9,8 @@
 </head>
 <body>
 
-  <!-- ① 스플래시 화면 -->
-  <div id="splash-screen" class="screen active">
-    <img src="icon-192.png" alt="앱 로고" class="splash-logo" />
-    <p class="splash-text">Loading…</p>
-  </div>
-
-  <!-- ② 로그인 화면 -->
-  <div id="login-screen" class="screen">
+  <!-- 로그인 화면만 남깁니다 -->
+  <div id="login-screen" class="screen active">
     <h1>로그인</h1>
     <form id="login-form">
       <input type="text"     id="user-id"   placeholder="아이디"     required />
@@ -29,6 +23,12 @@
     </div>
   </div>
 
+  <script>
+    // service-worker 등록
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js');
+    }
+  </script>
   <script src="app.js"></script>
 </body>
 </html>
