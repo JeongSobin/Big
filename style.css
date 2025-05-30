@@ -1,6 +1,10 @@
 /* 화면 전환용 공통 클래스 */
-.screen { display: none; }
-.screen.active { display: block; }
+.screen {
+  display: none;    /* 기본 숨김 */
+}
+.screen.active {
+  display: block;   /* active 붙은 것만 보임 */
+}
 
 /* 스플래시 화면 */
 #splash-screen {
@@ -12,10 +16,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 .splash-logo {
-  width: 120px;
-  height: 120px;
+  width: 120px; height: 120px;
 }
 .splash-text {
   margin-top: 1rem;
@@ -51,9 +55,9 @@
 #login-screen button {
   padding: 0.75rem;
   font-size: 1rem;
-  border: none;
   background: #007bff;
   color: #fff;
+  border: none;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -69,3 +73,5 @@
 #login-screen .links a:hover {
   text-decoration: underline;
 }
+
+/* 홈·설정 화면은 필요에 따라 스타일 추가 */
