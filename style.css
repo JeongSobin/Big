@@ -15,7 +15,7 @@ body, html {
   align-items: center;
 }
 
-/* 로그인 폼 */
+/* 로그인 폼 스타일 */
 #login-screen h1 {
   margin-bottom: 24px;
   font-size: 24px;
@@ -47,7 +47,7 @@ body, html {
   background: #0056b3;
 }
 
-/* 링크 */
+/* 링크 배치 */
 .login-links {
   margin-top: 12px;
   width: 100%; max-width: 320px;
