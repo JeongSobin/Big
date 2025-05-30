@@ -1,24 +1,4 @@
-body {
-  max-width: 500px;
-  margin: 2rem auto;
-  font-family: sans-serif;
-}
-h1 {
-  text-align: center;
-}
-form {
-  display: flex;
-  gap: 0.5rem;
-}
-input {
-  flex: 1;
-  padding: 0.5rem;
-}
-button {
-  padding: 0.5rem 1rem;
-}
-li {
-  display: flex;/* 공통 숨김 처리 */
+/* 공통 숨김 처리 */
 .hidden {
   display: none;
 }
@@ -84,26 +64,3 @@ li {
 #login-screen .links a:hover {
   text-decoration: underline;
 }
-
-  justify-content: space-between;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #ddd;
-}
-li button {
-  background: none;
-  border: none;
-  color: red;
-  cursor: pointer;
-}
-
-/* ===== 화면 전환용 공통 클래스 ===== */
-.screen {
-  display: none;
-}
-.screen.active {
-  display: block;
-}
-.hidden {
-  display: none;
-}
-
