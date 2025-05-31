@@ -8,14 +8,21 @@ function showScreen(id) {
 
 // DOMContentLoaded 시점에 이벤트 바인딩
 window.addEventListener('DOMContentLoaded', () => {
-
-  // ───── ① '시작' 버튼 클릭 → 로그인 화면으로 전환 ─────
+  // ① '시작' 버튼 → 로그인 화면 전환
   document.getElementById('start-button').addEventListener('click', () => {
     showScreen('login-screen');
   });
 
-  // ───── ② 로그인 폼 제출 시 → 메인 화면 전환 + 위치 요청 ─────
-  document.getElementById('login-form')
+  // ② '회원가입' 링크 클릭 → 회원가입 화면(signup-screen) 전환
+  document.getElementById('signup-link').addEventListener('click', e => {
+    e.preventDefault();
+    showScreen('signup-screen');
+  });
+
+  // ③ '회원가입 이미지' 클릭 → 로그인 화면으로 돌아가기
+  document.getElementById('signup-image').addEventListener('click', () => {
+    showScreen('login-screen');
+  });
     .addEventListener('submit', e => {
       e.preventDefault();
       const id = document.getElementById('user-id').value.trim();
