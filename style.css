@@ -104,10 +104,11 @@ body {
 /* 이미지를 감싸는 래퍼: 버튼을 이미지 위에 겹치도록 relative */
 .welcome-wrapper {
   position: relative;
-  width: 100%;
-  max-width: 480px;  /* 최대 너비를 480px로 고정 */
+  width: 80vw;      /* 화면 가로 너비의 80% */
+  max-width: 480px; /* 최대 480px까지만 늘어납니다 */
   margin: 0 auto;
 }
+
 
 /* 웰컴 이미지 (수정) */
 .welcome-image {
