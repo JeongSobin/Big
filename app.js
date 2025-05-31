@@ -33,24 +33,19 @@ window.addEventListener('DOMContentLoaded', () => {
         showScreen('main-screen');
 
         // 위치 권한 요청
-        if ('geolocation' in navigator) {
-          navigator.geolocation.getCurrentPosition(
-            pos => {
-              // 요청 성공했을 때, 위도/경도 화면에 표시
-              document.getElementById('user-location').textContent =
-                `${pos.coords.latitude.toFixed(4)}, ${pos.coords.longitude.toFixed(4)}`;
-            },
-            err => {
-              document.getElementById('user-location').textContent =
-                '위치 권한 거부됨';
-            }
-          );
-        } else {
-          document.getElementById('user-location').textContent =
-            'GPS 지원 안 함';
-        }
+        if (id === 'test' && pw === '1234') {
+      showScreen('main-screen');
+
+      if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          pos => console.log('위치 허용됨:', pos.coords),
+          err => console.warn('위치 요청 에러:', err.message)
+        );
       } else {
-        alert('아이디 또는 비밀번호가 잘못되었습니다.');
+        alert('이 브라우저는 Geolocation을 지원하지 않습니다.');
       }
-    });
+    } else {
+      alert('아이디 또는 비밀번호가 잘못되었습니다.');
+    }
+  });
 });
