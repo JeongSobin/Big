@@ -39,8 +39,7 @@ body {
   border-bottom: 1px solid #ddd;
 }
 .banner { flex: 1; display: flex; gap: 0.5rem; }
-.category { font-weight: bold; }
-.search-bar { flex: 1; background: #eee; padding: 0.5rem; border-radius: 4px; }
+
 .location-display { font-size: 0.85rem; color: #555; }
 .top-icons { margin-left: auto; display: flex; gap: 0.5rem; }
 .top-icons .icon { background: none; border: none; font-size: 1.2rem; cursor: pointer; }
