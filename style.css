@@ -43,34 +43,7 @@ body {
   margin: 0 auto;
 }
 
-/* 좌측: 카테고리 + 검색 텍스트 */
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.header-left .btn-category {
-  background: none;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-}
-.header-left .btn-search-text {
-  background: #f0f0f0;
-  border: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
 
-/* 중앙: 위치 표시 */
-.header-center {
-  flex: 1;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #333;
-}
 
 /* 우측: 알림·검색·하트 아이콘 */
 .header-right {
