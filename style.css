@@ -85,6 +85,38 @@ body {
   color: #555;
   cursor: pointer;
 }
+
+#welcome-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;           /* 화면 전체 높이 꽉 채우기 */
+  background: #f5f5f5;     /* 필요시 변경 가능 */
+}
+
+.welcome-image {
+  max-width: 80%;          /* 가로 폭 80% 이내 */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;     /* 이미지 아래 여유 공간 */
+}
+
+.start-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.start-btn:hover {
+  background: #0056b3;
+}
+
+/* ────────────────────────────────────── */
 .bottom-nav .nav-icon {
   font-size: 1.3rem;
   margin-bottom: 0.2rem;
