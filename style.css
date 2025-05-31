@@ -93,7 +93,6 @@ body {
 /* ───── 추가: Welcome 화면 스타일 ───── */
 
 #welcome-screen {
-  /* 전체 화면을 채우고, 내부 중앙 정렬 */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,34 +100,39 @@ body {
   background: #f5f5f5;
 }
 
-/* 이미지를 감싸는 래퍼: 버튼을 이미지 위에 겹치도록 relative */
+/* 래퍼를 inline-block 으로 변경해서 "이미지 실제 너비"만큼만 공간을 차지하게 */
 .welcome-wrapper {
   position: relative;
-  width: 80vw;      /* 화면 가로 너비의 80% */
-  max-width: 480px; /* 최대 480px까지만 늘어납니다 */
+  display: inline-block; /* 기존: width:100%; max-width:480px; margin:0 auto; */
   margin: 0 auto;
 }
 
-
-/* 웰컴 이미지 (수정) */
+/* 
+  원본 비율 유지
+  화면 가로(뷰포트) 너비의 90% 이상으로는 늘어나지 않고,
+  화면 세로(뷰포트) 높이의 70% 이상으로도 늘어나지 않음
+*/
 .welcome-image {
   display: block;
-  /* 원본 비율을 유지하면서, 화면(width)이 이미지보다 좁으면 이미지가 줄어들도록 */
-  max-width: 100%;     /* 최대 화면(래퍼) 너비의 100%까지만 확장 */
+  width: auto;
   height: auto;
+  max-width: 90vw;   /* 화면 너비의 90%까지만 확장 */
+  max-height: 70vh;  /* 화면 높이의 70%까지만 확장 */
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-
-/* 시작 버튼 (이미지 위 중앙 하단에 크게 표시) */
+/* 
+  이미지 위 하단 중앙에 크게 표시 
+  bottom: 5% 로 이미지 높이의 5% 위쪽에 배치 
+*/
 .start-btn {
   position: absolute;
-  bottom: 10%;               /* 이미지 맨 아래에서 10% 위쪽 */
+  bottom: 5%;              
   left: 50%;
   transform: translateX(-50%);
-  padding: 1rem 2rem;        /* 버튼 크기 크게 조정 */
-  font-size: 1.1rem;         /* 폰트 크기도 크게 */
+  padding: 1.2rem 2.5rem;      /* 버튼을 좀 더 크게 조정 */
+  font-size: 1.2rem;           /* 폰트 크기도 키움 */
   background: rgba(0, 123, 255, 0.9);
   color: #fff;
   border: none;
@@ -138,5 +142,4 @@ body {
 }
 .start-btn:hover {
   background: rgba(0, 123, 255, 1);
-
 }
