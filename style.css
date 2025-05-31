@@ -21,13 +21,9 @@ body {
   text-align: center; margin-top: 10vh;
 }
 .login-container {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
+background: #fff; padding: 2rem; border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: center;
-  margin: 10vh auto 0 auto;
-  max-width: 480px;
+  text-align: center; margin-top: 10vh;
 }
 
 #login-form button {
