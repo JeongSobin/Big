@@ -85,35 +85,53 @@ body {
   color: #555;
   cursor: pointer;
 }
+/* (네비 아이콘 글자 크기) */
+.bottom-nav .nav-icon {
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
 
 /* ───── 추가: Welcome 화면 스타일 ───── */
 
 #welcome-screen {
+  /* 화면 전체를 채우고 중앙 정렬 */
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;           /* 화면 전체 높이 */
-  background: #f5f5f5;     /* 원하시는 배경색으로 */
+  height: 100vh;
+  background: #f5f5f5;  /* 필요 시 변경 가능 */
 }
 
+/* 이미지를 감싸는 래퍼 */
+.welcome-wrapper {
+  position: relative;
+  width: 80%; /* 필요에 따라 조정 */
+  max-width: 360px;
+}
+
+/* 웰컴 이미지 */
 .welcome-image {
-  max-width: 80%;          /* 가로 폭 최대 80% */
+  display: block;
+  width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin-bottom: 2rem;     /* 이미지 아래 여유 */
 }
 
+/* 이미지 위에 버튼을 겹치기 위한 절대 위치 */
 .start-btn {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  background: #007bff;
+  background: rgba(0, 123, 255, 0.85); /* 반투명 블루 */
   color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
 .start-btn:hover {
-  background: #0056b3;
+  background: rgba(0, 123, 255, 1);
+
 }
