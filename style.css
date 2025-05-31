@@ -136,7 +136,7 @@ body {
 .welcome-wrapper {
   position: relative;
   display: inline-block; /* 기존: width:100%; max-width:480px; margin:0 auto; */
-  margin: 0 auto;
+
 }
 
 /* 
@@ -148,8 +148,8 @@ body {
   display: block;
   width: auto;
   height: auto;
-  max-width: 90vw;   /* 화면 너비의 90%까지만 확장 */
-  max-height: 70vh;  /* 화면 높이의 70%까지만 확장 */
+  max-width: 80vw;   /* 화면 너비의 90%까지만 확장 */
+  max-height: 60vh;  /* 화면 높이의 70%까지만 확장 */
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
