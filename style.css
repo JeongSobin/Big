@@ -20,111 +20,58 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: center; margin-top: 10vh;
 }
-.login-container {
-background: #fff; padding: 2rem; border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: center; margin-top: 10vh;
+.login-container h1 { margin-bottom: 1rem; }
+#login-form { display: flex; flex-direction: column; gap: 0.75rem; }
+#login-form input,
+#login-form button {
+  padding: 0.75rem; font-size: 1rem; border-radius: 4px;
 }
-
 #login-form button {
   border: none; background: #007bff; color: #fff; cursor: pointer;
 }
 .links { margin-top: 1rem; font-size: 0.9rem; }
 .links a { color: #007bff; text-decoration: none; }
 
-/* ────────── 메인 헤더 (상단 배너) ────────── */
+/* 메인 헤더 */
 .main-header {
-  background: #fff;
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
+  background: #fff; padding: 1rem; display: flex;
+  flex-wrap: wrap; align-items: center; gap: 0.5rem;
   border-bottom: 1px solid #ddd;
-  max-width: 480px;
-  margin: 0 auto;
 }
+.banner { flex: 1; display: flex; gap: 0.5rem; }
+.category { font-weight: bold; }
+.search-bar { flex: 1; background: #eee; padding: 0.5rem; border-radius: 4px; }
+.location-display { font-size: 0.85rem; color: #555; }
+.top-icons { margin-left: auto; display: flex; gap: 0.5rem; }
+.top-icons .icon { background: none; border: none; font-size: 1.2rem; cursor: pointer; }
 
-
-
-/* 우측: 알림·검색·하트 아이콘 */
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 0.7.rem;
-}
-.header-right .icon-btn {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-/* ────────── 광고 배너 ────────── */
+/* 광고 */
 .advertisement {
-  background: #fff3cd;
-  color: #856404;
-  text-align: center;
-  padding: 1.2rem;
-  margin: 0.75rem auto;
-  border-radius: 6px;
-  border: 1px solid #ffeeba;
-  max-width: 480px;
-  font-size: 0.9rem;
+  background: #fff; padding: 1.5rem; text-align: center;
+  margin: 1rem 0; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
-/* ────────── 상품 목록 ────────── */
+/* 상품 목록 */
 .product-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-  margin: 1rem auto 4rem auto; /* 밑에 네비랑 겹치지 않게 여유 */
-  max-width: 480px;
-  padding: 0 0.5rem;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0.75rem; margin-bottom: 3rem;
 }
 .product-item {
-  background: #ffffff;
-  padding: 0.75rem;
-  border-radius: 4px;
+  background: #fff; padding: 0.75rem; border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  display: flex; flex-direction: column; gap: 0.25rem;
 }
-.product-item .product-name {
-  font-weight: bold;
-  font-size: 0.95rem;
-}
-.product-item .product-price {
-  color: #007bff;
-  font-size: 0.9rem;
-}
-.product-item .product-loc {
-  font-size: 0.8rem;
-  color: #555;
-}
+.product-item .name { font-weight: bold; }
+.product-item .price { color: #007bff; }
+.product-item .loc   { font-size: 0.85rem; color: #555; }
 
-/* ────────── 하단 내비게이션 바 ────────── */
+/* 하단 네비 */
 .bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0; right: 0;
-  background: #fff;
-  border-top: 1px solid #ddd;
-  display: flex;
-  justify-content: space-around;
-  padding: 0.5rem 0;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #fff; padding: 0.5rem 0;
+  display: flex; justify-content: space-around;
+  box-shadow: 0 -1px 4px rgba(0,0,0,0.1);
 }
-.bottom-nav .nav-btn {
-  background: none;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.75rem;
-  color: #555;
-  cursor: pointer;
-}
-.bottom-nav .nav-icon {
-  font-size: 1.3rem;
-  margin-bottom: 0.2rem;
-
+.bottom-nav button {
+  border: none; background: none; font-size: 1rem; cursor: pointer;
 }
