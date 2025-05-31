@@ -5,8 +5,16 @@ function showScreen(id) {
   document.getElementById(id).classList.add('active');
 }
 
-// ① 로그인 처리
+
+// DOMContentLoaded 시점에 이벤트 바인딩
 window.addEventListener('DOMContentLoaded', () => {
+
+  // ───── ① '시작' 버튼 클릭 → 로그인 화면으로 전환 ─────
+  document.getElementById('start-button').addEventListener('click', () => {
+    showScreen('login-screen');
+  });
+
+  // ───── ② 로그인 폼 제출 시 → 메인 화면 전환 + 위치 요청 ─────
   document.getElementById('login-form')
     .addEventListener('submit', e => {
       e.preventDefault();
