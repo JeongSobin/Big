@@ -44,13 +44,14 @@ body {
 .signup-wrapper {
   position: relative;
   display: inline-block;
+  margin: 0 auto;
 }
 .signup-image {
   display: block;
   width: auto;
   height: auto;
-  max-width: 90vw;
-  max-height: 70vh;
+  max-width: 80vw;
+  max-height: 60vh;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   cursor: pointer; /* 클릭 가능하다는 표시 */
@@ -58,16 +59,23 @@ body {
 
 /* 메인 헤더 */
 .main-header {
-  background: #fff; padding: 1rem; display: flex;
-  flex-wrap: wrap; align-items: center; gap: 0.5rem;
+  background: #fff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   border-bottom: 1px solid #ddd;
 }
-.banner { flex: 1; display: flex; gap: 0.5rem; }
-
-.location-display { font-size: 0.85rem; color: #555; }
-.top-icons { margin-left: auto; display: flex; gap: 0.5rem; }
-.top-icons .icon { background: none; border: none; font-size: 1.2rem; cursor: pointer; }
-
+.header-right {
+  display: flex;
+  gap: 0.5rem;
+}
+.header-right .icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
 /* 광고 */
 .advertisement {
   background: #fff; padding: 1.5rem; text-align: center;
