@@ -7,9 +7,14 @@ function showScreen(id) {
 
 window.addEventListener('DOMContentLoaded', () => {
   // ① '시작' 버튼 클릭 → 로그인 화면 전환
-  document.getElementById('start-button').addEventListener('click', () => {
-    showScreen('login-screen');
-  });
+  const startButton = document.getElementById('start-button');
+  if (startButton) {
+    startButton.addEventListener('click', () => {
+      showScreen('login-screen');
+    });
+  } else {
+    console.error('start-button not found');
+  }
 
   // ② '회원가입' 링크 클릭 → signup-screen으로 전환
   document.getElementById('signup-link').addEventListener('click', e => {
