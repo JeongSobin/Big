@@ -206,8 +206,7 @@ body {
   position: relative;
   width: 80vw;     /* 이미지와 동일한 폭 */
   height: 60vh;
-  display: inline-block;
-  margin: 0 auto;
+
 }
 
 .welcome-image {
@@ -218,6 +217,7 @@ body {
   max-height: 60vh;  /* 화면 세로 높이의 60% */
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
 }
 
 /* z-index를 줘야 버튼이 이미지 위로 떠서 클릭 가능합니다 */
