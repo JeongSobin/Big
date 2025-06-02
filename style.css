@@ -10,6 +10,12 @@
   display: block;
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden; /* 스크롤 방지 */
+}
+
+
 /* 공통 레이아웃 */
 body {
   margin: 0;
