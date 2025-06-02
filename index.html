@@ -2,28 +2,30 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>앱 시작 → 로그인 → 회원가입</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- =========================================
+  <!-- =========================================
        ① Welcome 화면 (start.png + 시작 버튼)
        ========================================= -->
-<div id="welcome-screen" class="screen active">
-  <div class="welcome-wrapper">
-    <img src="start.png" alt="Welcome 이미지" class="welcome-image" />
-    <button id="start-button" class="start-btn">시작</button>
-   </div>
-  </div> 
-  
-  <!-- 로그인 화면 -->
+  <div id="welcome-screen" class="screen active">
+    <div class="welcome-wrapper">
+      <img src="start.png" alt="Welcome 이미지" class="welcome-image" />
+      <button id="start-button" class="start-btn">시작</button>
+    </div>
+  </div>
+
+  <!-- =========================================
+       ② 로그인 화면
+       ========================================= -->
   <div id="login-screen" class="screen">
     <div class="login-container">
       <h1>로그인</h1>
       <form id="login-form">
-        <input type="text"     id="user-id" placeholder="아이디"     required />
+        <input type="text" id="user-id" placeholder="아이디" required />
         <input type="password" id="user-pw" placeholder="비밀번호" required />
         <button type="submit">로그인</button>
       </form>
@@ -34,18 +36,20 @@
     </div>
   </div>
 
-    <!-- ③ 회원가입 화면 (signup-screen) -->
+  <!-- =========================================
+       ③ 회원가입 화면 (signup-screen)
+       ========================================= -->
   <div id="signup-screen" class="screen">
     <div class="signup-wrapper">
-      <!-- signup.jpeg 파일을 루트에 넣어주세요 -->
       <img src="signup.jpeg" alt="회원가입 이미지" id="signup-image" class="signup-image" />
     </div>
   </div>
 
-  <!-- 메인 화면 -->
+  <!-- =========================================
+       ④ 메인 화면 (로그인 성공 후)
+       ========================================= -->
   <div id="main-screen" class="screen">
-    <!-- ① 상단 배너 (헤더) -->
-   <div class="main-header">
+    <div class="main-header">
       <div class="header-right">
         <button class="icon-btn">🔔</button>
         <button class="icon-btn">🔍</button>
@@ -53,14 +57,11 @@
       </div>
     </div>
 
-    <!-- ② 광고 배너 -->
     <section class="advertisement">
-      <p>광고 배너 자리 (이미지나 텍스트 삽입)</p>
+      <p>광고 배너 자리 (예시)</p>
     </section>
 
-    <!-- ③ 제품 목록 -->
     <section class="product-list">
-      <!-- 예시 상품 카드 -->
       <div class="product-item">
         <div class="product-name">제품 A</div>
         <div class="product-price">₩10,000</div>
@@ -76,10 +77,8 @@
         <div class="product-price">₩15,000</div>
         <div class="product-loc">부산 해운대구</div>
       </div>
-      <!-- 필요에 따라 반복 추가 -->
     </section>
 
-    <!-- ④ 하단 내비게이션 바 -->
     <nav class="bottom-nav">
       <button class="nav-btn">
         <span class="nav-icon">🗂️</span>
