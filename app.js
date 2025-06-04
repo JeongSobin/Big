@@ -1,4 +1,4 @@
-// 화면 전환 헬퍼 함수: id에 해당하는 스크린만 active, 나머지 숨김
+// 화면 전환 헬퍼
 function showScreen(id) {
   document.querySelectorAll('.screen')
     .forEach(el => el.classList.remove('active'));
@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
     showScreen('login-screen');
   });
 
-  // ② '회원가입' 링크 클릭 → signup-screen으로 전환
+// ② '회원가입' 링크 클릭 → signup-screen으로 전환
   document.getElementById('signup-link').addEventListener('click', e => {
     e.preventDefault();
     showScreen('signup-screen');
@@ -33,7 +33,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ④ 로그인 폼 제출 → main-screen으로 전환 + 위치 요청
+
+  // ④ 로그인 폼 제출 → (예시) 메인 화면으로 전환 + 위치 요청
   document.getElementById('login-form').addEventListener('submit', e => {
     e.preventDefault();
     const id = document.getElementById('user-id').value.trim();
@@ -54,12 +55,5 @@ window.addEventListener('DOMContentLoaded', () => {
       alert('아이디 또는 비밀번호가 잘못되었습니다.');
     }
   });
-
-  // ⑤ 하단 네비게이션 '마이페이지' 클릭 → 마이페이지 화면으로 전환
-  const myPageBtn = document.querySelectorAll('.bottom-nav .nav-btn')[4];
-  if (myPageBtn) {
-    myPageBtn.addEventListener('click', () => {
-      showScreen('mypage-screen');
-    });
-  }
 });
+
