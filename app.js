@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
     showScreen('login-screen');
   });
 
-// ② '회원가입' 링크 클릭 → signup-screen으로 전환
+  // ② '회원가입' 링크 클릭 → signup-screen으로 전환
   document.getElementById('signup-link').addEventListener('click', e => {
     e.preventDefault();
     showScreen('signup-screen');
@@ -33,8 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-
-  // ④ 로그인 폼 제출 → (예시) 메인 화면으로 전환 + 위치 요청
+  // ④ 로그인 폼 제출 → 메인 화면으로 전환 + 위치 요청
   document.getElementById('login-form').addEventListener('submit', e => {
     e.preventDefault();
     const id = document.getElementById('user-id').value.trim();
@@ -55,4 +54,12 @@ window.addEventListener('DOMContentLoaded', () => {
       alert('아이디 또는 비밀번호가 잘못되었습니다.');
     }
   });
+
+  // ⑤ 메인화면 하단 마이페이지 버튼 → 마이페이지 화면으로 전환
+  const myPageBtn = document.querySelector('.bottom-nav .nav-btn:last-child');
+  if (myPageBtn) {
+    myPageBtn.addEventListener('click', () => {
+      showScreen('mypage-screen');
+    });
+  }
 });
