@@ -57,11 +57,4 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// ⑤ 하단 네비게이션 '마이페이지' 버튼 → 마이페이지 화면으로 전환
-  const myPageBtn = document.querySelectorAll('.bottom-nav .nav-btn')[4];
-  if (myPageBtn) {
-    myPageBtn.addEventListener('click', () => {
-      showScreen('mypage-screen');
-    });
-  }
-});
+
