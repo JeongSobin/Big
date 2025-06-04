@@ -104,38 +104,273 @@
     </nav>
   </div>
   
-<!-- ⑤ 마이페이지 화면 -->
-<div id="mypage-screen" class="screen">
-  <div class="mypage-container">
-    
-    <!-- 상단 프로필 -->
-    <div class="mypage-profile">
-      <img src="profile.png" alt="프로필" class="mypage-avatar">
-      <div class="mypage-name">와라락</div>
-      <div class="mypage-meta">★ 0.0 · 후기 0 · 팔로워 0</div>
-    </div>
+/* ─────────────────────────────────────────────────────────────────── */
+/*                        마이페이지 전체 스타일                        */
+/* ─────────────────────────────────────────────────────────────────── */
 
-    <!-- 주요 기능 카드 -->
-    <div class="mypage-cards">
-      <div class="mypage-card">내 상품 관리</div>
-      <div class="mypage-card">판매내역</div>
-      <div class="mypage-card">배송신청/관리</div>
-      <div class="mypage-card">내 상점 후기</div>
-      <div class="mypage-card">받은 가격제안</div>
-      <div class="mypage-card">찜한 물품</div>
-    </div>
+/* 1) screen 기본값 (이미 정의된 코드, 그대로 두시면 됩니다) */
+/*
+.screen {
+  display: none;
+}
+.screen.active {
+  display: block;
+}
+*/
 
-    <!-- 배너 -->
-    <div class="mypage-banner">
-      <img src="banner.jpg" alt="광고 배너" />
-    </div>
+#mypage-screen {
+  background: #f2f2f2;
+  min-height: 100vh;
+  padding-bottom: 4rem; /* 하단 네비를 가리지 않도록 여백 */
+}
 
-  </div>
-</div>
+.mypage-container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
 
+/* 2) 상단 헤더 */
+.mypage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.mypage-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.mypage-setting-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
 
+/* 3) 프로필 카드 */
+.mypage-profile-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.profile-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ddd;
+  margin-right: 0.75rem;
+  object-fit: cover;
+}
+.profile-info {
+  flex: 1;
+}
+.profile-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+.profile-meta {
+  font-size: 0.85rem;
+  color: #777;
+}
+.profile-arrow {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #ccc;
+  cursor: pointer;
+}
 
+/* 4) 당근페이 카드 */
+.mypage-pay-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.pay-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.pay-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+.pay-button {
+  background: #ff8c00;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
 
-  
-</body>
-</html>
+/* 5) 서비스 카드 (아이콘 6개) */
+.mypage-service-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.service-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #333;
+}
+.service-item img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 0.5rem;
+  object-fit: contain;
+}
+.service-view-all {
+  text-align: center;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #555;
+  cursor: pointer;
+}
+
+/* 6) 탭 카드 (관심목록 / 최근 본 글 / 이벤트) */
+.mypage-tab-card {
+  display: flex;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  margin-bottom: 1rem;
+}
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem 0;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #555;
+  border-radius: 0; /* default */
+}
+.tab-item:not(.active):hover {
+  background: #f0f0f0;
+}
+.tab-item.active {
+  background: #000;
+  color: #fff;
+  border-radius: 12px;
+}
+
+/* 7) 나의 거래 카드 */
+.mypage-transaction-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.transaction-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+.transaction-grid {
+  display: flex;
+  justify-content: space-between;
+}
+.transaction-item {
+  flex: 1;
+  text-align: center;
+  background: #f8f8f8;
+  padding: 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+}
+.transaction-item:last-child {
+  margin-right: 0;
+}
+
+/* 8) 추가 메뉴 리스트 */
+.mypage-simple-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.mypage-simple-list li {
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.04);
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* 9) 광고 배너 */
+.mypage-banner {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+.mypage-banner img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+
+/* 10) 하단 네비게이션 (기존과 동일) */
+.bottom-nav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+}
+.bottom-nav .nav-btn {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #555;
+  cursor: pointer;
+}
+.bottom-nav .nav-btn img {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 0.2rem;
+}
+.bottom-nav .nav-btn span {
+  display: block;
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
