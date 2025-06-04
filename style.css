@@ -39,7 +39,7 @@ body {
 
 /* 회원가입 화면 스타일 */
 #signup-screen {
-  display: flex;
+  
   justify-content: center;
   align-items: center;
   height: 100vh;
