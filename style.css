@@ -3,71 +3,43 @@
 /* ────────────────────────────────────────────────────────── */
 
 /* 화면 전환 */
-.screen {
-  display: none;
-}
-.screen.active {
-  display: block;
-}
+.screen { display: none; }
+.screen.active { display: block; }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  font-family: sans-serif;
-  background: #f5f5f5;
+/* 공통 레이아웃 */
+body {
+  margin: 0; font-family: sans-serif; background: #f5f5f5;
 }
-
-/* ① 로그인 컨테이너, 메인, 광고, 상품 목록, bottom-nav 공통 레이아웃 */
 .login-container,
 .main-header,
 .advertisement,
 .product-list,
 .bottom-nav {
-  max-width: 480px;
-  margin: 0 auto;
+  max-width: 480px; margin: 0 auto;
 }
 
-/* ─────────────────── 로그인 화면 ─────────────────── */
+/* 로그인 컨테이너 */
 .login-container {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
+  background: #fff; padding: 2rem; border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: center;
-  margin-top: 10vh;
+  text-align: center; margin-top: 10vh;
 }
-.login-container h1 {
-  margin-bottom: 1rem;
-}
-#login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
+.login-container h1 { margin-bottom: 1rem; }
+#login-form { display: flex; flex-direction: column; gap: 0.75rem; }
 #login-form input,
 #login-form button {
-  padding: 0.75rem;
-  font-size: 1rem;
-  border-radius: 4px;
+  padding: 0.75rem; font-size: 1rem; border-radius: 4px;
 }
 #login-form button {
-  border: none;
-  background: #007bff;
-  color: #fff;
-  cursor: pointer;
+  border: none; background: #007bff; color: #fff; cursor: pointer;
 }
-.links {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-}
-.links a {
-  color: #007bff;
-  text-decoration: none;
-}
+.links { margin-top: 1rem; font-size: 0.9rem; }
+.links a { color: #007bff; text-decoration: none; }
 
-/* ─────────────────── 회원가입 화면 ─────────────────── */
+
+/* 회원가입 화면 스타일 */
 #signup-screen {
-  display: flex;
+  
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -76,6 +48,7 @@ html, body {
 .signup-wrapper {
   position: relative;
   display: inline-block;
+
 }
 .signup-image {
   display: block;
@@ -85,10 +58,10 @@ html, body {
   max-height: 60vh;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  cursor: pointer;
+  cursor: pointer; /* 클릭 가능하다는 표시 */
 }
 
-/* ─────────────────── 메인 헤더 ─────────────────── */
+/* 메인 헤더 */
 .main-header {
   background: #fff;
   padding: 1rem;
@@ -107,56 +80,36 @@ html, body {
   font-size: 1.2rem;
   cursor: pointer;
 }
-
-/* ─────────────────── 광고 ─────────────────── */
+/* 광고 */
 .advertisement {
-  background: #fff;
-  padding: 1.5rem;
-  text-align: center;
-  margin: 1rem 0;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  background: #fff; padding: 1.5rem; text-align: center;
+  margin: 1rem 0; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
-/* ─────────────────── 상품 목록 ─────────────────── */
+/* 상품 목록 */
 .product-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-  margin-bottom: 3rem;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0.75rem; margin-bottom: 3rem;
 }
 .product-item {
-  background: #fff;
-  padding: 0.75rem;
-  border-radius: 4px;
+  background: #fff; padding: 0.75rem; border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  display: flex; flex-direction: column; gap: 0.25rem;
 }
-.product-item .product-name {
-  font-weight: bold;
-}
-.product-item .product-price {
-  color: #007bff;
-}
-.product-item .product-loc {
-  font-size: 0.75rem;
-  color: #555;
-}
+.product-item .name { font-weight: bold; }
+.product-item .price { color: #007bff; }
+.product-item .loc   { font-size: 0.75rem; color: #555; }
 
-/* ─────────────────── 하단 네비게이션 바 ─────────────────── */
+/* 하단 네비 */
 .bottom-nav {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 0; right: 0;
   background: #fff;
   border-top: 1px solid #ddd;
   display: flex;
   justify-content: space-around;
   padding: 0.5rem 0;
-  z-index: 100; /* 항상 최상단에 뜨도록 */
 }
 .bottom-nav .nav-btn {
   background: none;
@@ -168,17 +121,13 @@ html, body {
   color: #555;
   cursor: pointer;
 }
-.bottom-nav .nav-btn img {
-  width: 24px;
-  height: 24px;
+/* (네비 아이콘 글자 크기) */
+.bottom-nav .nav-icon {
+  font-size: 1.3rem;
   margin-bottom: 0.2rem;
-}
-.bottom-nav .nav-btn span {
-  display: block;
-  margin-top: 2px;
-}
 
-/* ───── Welcome 화면 ───── */
+/* ───── 추가: Welcome 화면 스타일 ───── */
+
 #welcome-screen {
   display: flex;
   justify-content: center;
@@ -186,28 +135,40 @@ html, body {
   height: 100vh;
   background: #f5f5f5;
 }
+
+/* 래퍼를 inline-block 으로 변경해서 "이미지 실제 너비"만큼만 공간을 차지하게 */
 .welcome-wrapper {
   position: relative;
-  width: 80vw;
+  width: 80vw;     /* 이미지와 동일한 폭 */
   height: 60vh;
 }
+
+/* 
+  원본 비율 유지
+  화면 가로(뷰포트) 너비의 90% 이상으로는 늘어나지 않고,
+  화면 세로(뷰포트) 높이의 70% 이상으로도 늘어나지 않음
+*/
 .welcome-image {
-  pointer-events: none;
   display: block;
   width: 100%;
   height: 100%;
-  max-width: 80vw;
-  max-height: 60vh;
+  max-width: 80vw;   /* 화면 너비의 90%까지만 확장 */
+  max-height: 60vh;  /* 화면 높이의 70%까지만 확장 */
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-.start-button {
+
+/* 
+  이미지 위 하단 중앙에 크게 표시 
+  bottom: 5% 로 이미지 높이의 5% 위쪽에 배치 
+*/
+.start-btn {
   position: absolute;
-  bottom: 5%;
+  bottom: 5%;              
   left: 50%;
   transform: translateX(-50%);
-  padding: 1.2rem 2.5rem;
-  font-size: 1.2rem;
+  padding: 1.2rem 2.5rem;      /* 버튼을 좀 더 크게 조정 */
+  font-size: 1.2rem;           /* 폰트 크기도 키움 */
   background: rgba(0, 123, 255, 0.9);
   color: #fff;
   border: none;
@@ -216,237 +177,6 @@ html, body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   z-index: 10;
 }
-.start-button:hover {
+.start-btn:hover {
   background: rgba(0, 123, 255, 1);
-}
-
-/* ─────────────────────────────────────────────────────────────────── */
-/*                        마이페이지 스타일 (당근마켓형)                    */
-/* ─────────────────────────────────────────────────────────────────── */
-
-#mypage-screen {
-  background: #f5f5f5;
-  min-height: 100vh;
-  padding-bottom: 4rem; /* 하단 네비 여백 확보 */
-}
-
-/* 마이페이지 내부 래퍼 */
-.mypage-container {
-  max-width: 480px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  box-sizing: border-box;
-}
-
-/* 1) 상단 헤더 */
-.mypage-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-}
-.mypage-title {
-  font-size: 1.4rem;
-  font-weight: bold;
-}
-.mypage-setting-btn {
-  background: none;
-  border: none;
-  font-size: 1.3rem;
-  cursor: pointer;
-}
-
-/* 2) 프로필 카드 */
-.mypage-profile-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-.profile-img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #ddd;
-  margin-right: 0.75rem;
-  object-fit: cover;
-}
-.profile-info {
-  flex: 1;
-}
-.profile-name {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 0.25rem;
-}
-.profile-meta {
-  font-size: 0.85rem;
-  color: #777;
-}
-.profile-arrow {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: #ccc;
-  cursor: pointer;
-}
-
-/* 3) 당근페이 카드 */
-.mypage-pay-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-  padding: 1rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-.pay-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
-}
-.pay-icon {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-}
-.pay-button {
-  background: #ff8c00;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 0.6rem 1rem;
-  font-size: 0.95rem;
-  cursor: pointer;
-}
-
-/* 4) 서비스 카드 */
-.mypage-service-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-.service-title {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 0.75rem;
-}
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-}
-.service-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.85rem;
-  color: #333;
-}
-.service-item img {
-  width: 32px;
-  height: 32px;
-  margin-bottom: 0.5rem;
-  object-fit: contain;
-}
-.service-view-all {
-  text-align: center;
-  margin-top: 0.75rem;
-  font-size: 0.9rem;
-  color: #555;
-  cursor: pointer;
-}
-
-/* 5) 탭 카드 */
-.mypage-tab-card {
-  display: flex;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-  margin-bottom: 1rem;
-}
-.tab-item {
-  flex: 1;
-  text-align: center;
-  padding: 0.75rem 0;
-  font-weight: bold;
-  font-size: 0.9rem;
-  cursor: pointer;
-  color: #555;
-  border-radius: 0; /* 기본 */
-}
-.tab-item:not(.active):hover {
-  background: #f0f0f0;
-}
-.tab-item.active {
-  background: #000;
-  color: #fff;
-  border-radius: 12px;
-}
-
-/* 6) 나의 거래 카드 */
-.mypage-transaction-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-.transaction-title {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 0.75rem;
-}
-.transaction-grid {
-  display: flex;
-  justify-content: space-between;
-}
-.transaction-item {
-  flex: 1;
-  text-align: center;
-  background: #f8f8f8;
-  padding: 0.8rem;
-  margin-right: 0.5rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  color: #333;
-  cursor: pointer;
-}
-.transaction-item:last-child {
-  margin-right: 0;
-}
-
-/* 7) 추가 메뉴 리스트 */
-.mypage-simple-list {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0;
-}
-.mypage-simple-list li {
-  background: #fff;
-  padding: 1rem;
-  margin-bottom: 0.5rem;
-  border-radius: 12px;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.04);
-  font-size: 0.9rem;
-  color: #333;
-  cursor: pointer;
-}
-
-/* 8) 광고 배너 */
-.mypage-banner {
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-}
-.mypage-banner img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
 }
