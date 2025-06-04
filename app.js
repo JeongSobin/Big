@@ -11,16 +11,28 @@ window.addEventListener('DOMContentLoaded', () => {
     showScreen('login-screen');
   });
 
-  // ② '회원가입' 링크 클릭 → signup-screen으로 전환
+// ② '회원가입' 링크 클릭 → signup-screen으로 전환
   document.getElementById('signup-link').addEventListener('click', e => {
     e.preventDefault();
     showScreen('signup-screen');
   });
 
-  // ③ '회원가입 이미지' 클릭 → 다시 로그인 화면으로 전환
-  document.getElementById('signup-image').addEventListener('click', () => {
-    showScreen('login-screen');
+  // ③ 회원가입 이미지 클릭 → check → open → 로그인으로 전환
+  const signupImage = document.getElementById('signup-image');
+  let clickCount = 0;
+  signupImage.addEventListener('click', () => {
+    clickCount++;
+    if (clickCount === 1) {
+      signupImage.src = 'check.jpg';
+    } else if (clickCount === 2) {
+      signupImage.src = 'open.jpg';
+    } else {
+      clickCount = 0;
+      signupImage.src = 'signup.jpeg';
+      showScreen('login-screen');
+    }
   });
+
 
   // ④ 로그인 폼 제출 → (예시) 메인 화면으로 전환 + 위치 요청
   document.getElementById('login-form').addEventListener('submit', e => {
