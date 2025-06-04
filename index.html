@@ -103,38 +103,50 @@
       </button>
     </nav>
   </div>
-<!-- =========================================
-     ⑤ 마이페이지 화면
-     ========================================= -->
+<!-- ===============================
+     마이페이지 화면
+=============================== -->
 <div id="mypage-screen" class="screen">
-  <div class="mypage-container">
-    
-    <!-- 설정 아이콘 -->
-    <div class="mypage-header">
-      <button class="setting-btn">⚙️</button>
-    </div>
+  <div class="mypage-header">
+    <span class="mypage-title">MY PAGE</span>
+    <button class="setting-btn">⚙️</button>
+  </div>
 
-    <!-- 프로필 영역 -->
-    <div class="mypage-profile">
-      <img src="profile.png" alt="프로필" class="profile-image" />
-      <div class="nickname">닉네임</div>
-    </div>
-
-    <!-- 메뉴 리스트 -->
-    <ul class="mypage-menu">
-      <li>📦 내가 올린 물건</li>
-      <li>🛍️ 내 상점 후기</li>
-      <li>🧾 구매내역</li>
-      <li>❤️ 찜한 물품</li>
-      <li>📍 기본 위치 설정</li>
-    </ul>
-
-    <!-- 광고 배너 -->
-    <div class="mypage-banner">
-      <img src="banner.jpg" alt="광고 배너" />
+  <div class="mypage-profile-card">
+    <img src="profile.png" class="profile-image" alt="프로필" />
+    <div class="profile-info">
+      <strong>와라락</strong>
+      <span class="rating">★ 0.0 · 후기 0 · 팔로워 0</span>
     </div>
   </div>
+
+  <div class="mypage-points">
+    <div>번개포인트 <strong>0원</strong></div>
+    <div>최대 <span class="highlight">413,402원</span> 받기</div>
+  </div>
+
+  <div class="mypage-actions">
+    <button class="tab active">판매</button>
+    <button class="tab">구매</button>
+  </div>
+
+  <div class="mypage-grid">
+    <div class="grid-item">내 상품 관리</div>
+    <div class="grid-item">판매내역</div>
+    <div class="grid-item">배송신청/관리</div>
+  </div>
+
+  <ul class="mypage-list">
+    <li>내 상점 후기</li>
+    <li>받은 가격제안</li>
+    <li>내 찜한 물품</li>
+  </ul>
+
+  <div class="mypage-banner">
+    <img src="banner.jpg" alt="광고 배너" />
+  </div>
 </div>
+
 
 
   
