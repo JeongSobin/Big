@@ -1,4 +1,4 @@
-// 화면 전환 헬퍼
+// 화면 전환 헬퍼 함수: id에 해당하는 스크린만 active, 나머지 숨김
 function showScreen(id) {
   document.querySelectorAll('.screen')
     .forEach(el => el.classList.remove('active'));
@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ④ 로그인 폼 제출 → 메인 화면으로 전환 + 위치 요청
+  // ④ 로그인 폼 제출 → main-screen으로 전환 + 위치 요청
   document.getElementById('login-form').addEventListener('submit', e => {
     e.preventDefault();
     const id = document.getElementById('user-id').value.trim();
@@ -55,11 +55,11 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-
-
-    // 마이페이지 버튼 클릭 시 전환
-  document.querySelector('.bottom-nav .nav-btn:last-child').addEventListener('click', () => {
-    showScreen('mypage-screen');
-  });
-
-
+  // ⑤ 하단 네비게이션 '마이페이지' 클릭 → 마이페이지 화면으로 전환
+  const myPageBtn = document.querySelectorAll('.bottom-nav .nav-btn')[4];
+  if (myPageBtn) {
+    myPageBtn.addEventListener('click', () => {
+      showScreen('mypage-screen');
+    });
+  }
+});
