@@ -182,127 +182,130 @@ body {
 }
 
 
-/* 마이페이지 전체 화면 */
+/* 마이페이지 전체 스타일 */
 #mypage-screen {
-  background: #f9f9f9;
-  padding: 1rem;
-  padding-bottom: 5rem; /* 하단 네비 공간 확보 */
+  background: #f8f8f8;
   min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+.mypage-wrap {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1rem;
   box-sizing: border-box;
 }
 
-/* 상단 제목과 설정 버튼 */
 .mypage-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.mypage-title {
+.mypage-header h2 {
   font-size: 1.2rem;
-  font-weight: bold;
 }
 .setting-btn {
-  font-size: 1.3rem;
-  border: none;
   background: none;
+  border: none;
+  font-size: 1.3rem;
   cursor: pointer;
 }
 
 /* 프로필 카드 */
-.mypage-profile-card {
-  background: white;
-  border-radius: 12px;
+.profile-card {
+  background: #fff;
   padding: 1rem;
-  margin: 1rem 0;
+  margin-top: 1rem;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   gap: 1rem;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
-.profile-image {
+.profile-img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #ddd;
+  background: #ccc;
 }
-.profile-info {
-  display: flex;
-  flex-direction: column;
+.profile-info .nickname {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
-.rating {
+.profile-info .meta {
   font-size: 0.85rem;
-  color: #555;
+  color: #666;
 }
 
-/* 포인트 박스 */
-.mypage-points {
+/* 포인트 */
+.points-card {
   display: flex;
   justify-content: space-between;
-  padding: 0.75rem 1rem;
-  background: white;
+  background: #fff;
+  padding: 1rem;
+  margin-top: 1rem;
   border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  font-size: 0.9rem;
 }
-.mypage-points .highlight {
-  color: #00aa88;
+.points-card .highlight {
+  color: teal;
   font-weight: bold;
 }
 
-/* 판매/구매 탭 */
-.mypage-actions {
+/* 탭 */
+.tab-group {
   display: flex;
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
-.tab {
+.tab-group .tab {
   flex: 1;
-  padding: 0.75rem 0;
+  padding: 0.7rem;
   border: none;
-  background: #eee;
   font-weight: bold;
+  background: #eee;
   cursor: pointer;
 }
-.tab.active {
-  background: black;
+.tab-group .tab.active {
+  background: #222;
   color: white;
   border-radius: 6px;
 }
 
-/* 기능 아이콘 그리드 */
-.mypage-grid {
+/* 기능 카드 */
+.function-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin: 1.5rem 0;
+  gap: 0.75rem;
 }
-.grid-item {
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
+.func-item {
+  background: #fff;
   text-align: center;
+  padding: 1rem 0.5rem;
+  border-radius: 8px;
   font-size: 0.9rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
-/* 나의 활동 리스트 */
-.mypage-list {
+/* 일반 목록 */
+.simple-list {
   list-style: none;
   padding: 0;
-  margin: 0;
-}
-.mypage-list li {
-  background: white;
-  padding: 1rem;
-  margin-bottom: 0.5rem;
-  border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-}
-
-/* 배너 광고 */
-.mypage-banner {
   margin-top: 1.5rem;
 }
-.mypage-banner img {
+.simple-list li {
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+/* 광고 배너 */
+.banner-area {
+  margin-top: 1.5rem;
+}
+.banner-area img {
   width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
 }
