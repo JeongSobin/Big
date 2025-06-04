@@ -223,7 +223,7 @@ body {
 
 /* z-index를 줘야 버튼이 이미지 위로 떠서 클릭 가능합니다 */
 .start-btn {
-  pointer-events: none;
+ 
   position: absolute;
   bottom: 5%;
   left: 50%;
