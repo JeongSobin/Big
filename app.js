@@ -60,13 +60,13 @@ window.addEventListener('DOMContentLoaded', () => {
     showScreen('mypage-screen');
   });
 
-});
-
-// (이미 window.addEventListener('DOMContentLoaded', ...) 안에 들어있는 코드)
-const myPageBtn = document.querySelectorAll('.bottom-nav .nav-btn')[4];
-if (myPageBtn) {
-  myPageBtn.addEventListener('click', () => {
-    showScreen('mypage-screen');
-  });
 }
+
+  // (이미 window.addEventListener('DOMContentLoaded', ...) 안에 들어있는 코드)
+  const myPageBtn = document.querySelectorAll('.bottom-nav .nav-btn')[4];
+  if (myPageBtn) {
+    myPageBtn.addEventListener('click', () => {
+      showScreen('mypage-screen');
+    });
+  }
 
