@@ -182,130 +182,62 @@ body {
 }
 
 
-/* 마이페이지 전체 스타일 */
+/* 마이페이지 전체 컨테이너 */
 #mypage-screen {
-  background: #f8f8f8;
+  background: #f5f5f5;
   min-height: 100vh;
-  padding-bottom: 4rem;
+  padding-bottom: 4rem; /* 하단 네비 여백 */
 }
 
-.mypage-wrap {
+.mypage-container {
   max-width: 480px;
   margin: 0 auto;
   padding: 1rem;
   box-sizing: border-box;
 }
 
-.mypage-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* 상단 프로필 */
+.mypage-profile {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
-.mypage-header h2 {
+.mypage-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #ddd;
+  margin-bottom: 0.5rem;
+}
+.mypage-name {
+  font-weight: bold;
   font-size: 1.2rem;
 }
-.setting-btn {
-  background: none;
-  border: none;
-  font-size: 1.3rem;
-  cursor: pointer;
-}
-
-/* 프로필 카드 */
-.profile-card {
-  background: #fff;
-  padding: 1rem;
-  margin-top: 1rem;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-.profile-img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #ccc;
-}
-.profile-info .nickname {
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-.profile-info .meta {
+.mypage-meta {
   font-size: 0.85rem;
-  color: #666;
+  color: #555;
 }
 
-/* 포인트 */
-.points-card {
-  display: flex;
-  justify-content: space-between;
+/* 기능 카드들 */
+.mypage-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+.mypage-card {
   background: #fff;
   padding: 1rem;
-  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
   border-radius: 10px;
-  font-size: 0.9rem;
-}
-.points-card .highlight {
-  color: teal;
-  font-weight: bold;
-}
-
-/* 탭 */
-.tab-group {
-  display: flex;
-  margin: 1rem 0;
-}
-.tab-group .tab {
-  flex: 1;
-  padding: 0.7rem;
-  border: none;
-  font-weight: bold;
-  background: #eee;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   cursor: pointer;
 }
-.tab-group .tab.active {
-  background: #222;
-  color: white;
-  border-radius: 6px;
-}
 
-/* 기능 카드 */
-.function-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-}
-.func-item {
-  background: #fff;
-  text-align: center;
-  padding: 1rem 0.5rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-}
-
-/* 일반 목록 */
-.simple-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 1.5rem;
-}
-.simple-list li {
-  background: #fff;
-  padding: 1rem;
-  margin-bottom: 0.5rem;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-}
-
-/* 광고 배너 */
-.banner-area {
-  margin-top: 1.5rem;
-}
-.banner-area img {
+/* 배너 */
+.mypage-banner img {
   width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.1);
 }
