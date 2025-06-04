@@ -55,12 +55,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-    // 마이페이지 버튼 클릭 시 전환
-  document.querySelector('.bottom-nav .nav-btn:last-child').addEventListener('click', () => {
-    showScreen('mypage-screen');
-  });
 
-}
 
   // (이미 window.addEventListener('DOMContentLoaded', ...) 안에 들어있는 코드)
   const myPageBtn = document.querySelectorAll('.bottom-nav .nav-btn')[4];
