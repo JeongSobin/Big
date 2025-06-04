@@ -3,80 +3,41 @@
 /* ────────────────────────────────────────────────────────── */
 
 /* 화면 전환 */
-.screen {
-  display: none;
-}
-.screen.active {
-  display: block;
-}
-
-html, body {
-  height: 100%;
-  overflow: hidden; /* 스크롤 방지 */
-}
-
+.screen { display: none; }
+.screen.active { display: block; }
 
 /* 공통 레이아웃 */
 body {
-  margin: 0;
-  font-family: sans-serif;
-  background: #f5f5f5;
+  margin: 0; font-family: sans-serif; background: #f5f5f5;
 }
-
 .login-container,
 .main-header,
 .advertisement,
 .product-list,
 .bottom-nav {
-  max-width: 480px;
-  margin: 0 auto;
+  max-width: 480px; margin: 0 auto;
 }
 
-/* ─────────────────── 로그인 컨테이너 ─────────────────── */
+/* 로그인 컨테이너 */
 .login-container {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  margin-top: 10vh;
+  background: #fff; padding: 2rem; border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center; margin-top: 10vh;
 }
-
-.login-container h1 {
-  margin-bottom: 1rem;
-}
-
-#login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
+.login-container h1 { margin-bottom: 1rem; }
+#login-form { display: flex; flex-direction: column; gap: 0.75rem; }
 #login-form input,
 #login-form button {
-  padding: 0.75rem;
-  font-size: 1rem;
-  border-radius: 4px;
+  padding: 0.75rem; font-size: 1rem; border-radius: 4px;
 }
-
 #login-form button {
-  border: none;
-  background: #007bff;
-  color: #fff;
-  cursor: pointer;
+  border: none; background: #007bff; color: #fff; cursor: pointer;
 }
+.links { margin-top: 1rem; font-size: 0.9rem; }
+.links a { color: #007bff; text-decoration: none; }
 
-.links {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-}
 
-.links a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-/* ─────────────────── 회원가입 화면 ─────────────────── */
+/* 회원가입 화면 스타일 */
 #signup-screen {
   display: flex;
   justify-content: center;
@@ -84,24 +45,23 @@ body {
   height: 100vh;
   background: #f5f5f5;
 }
-
 .signup-wrapper {
   position: relative;
   display: inline-block;
-}
 
+}
 .signup-image {
   display: block;
   width: auto;
   height: auto;
-  max-width: 80vw;   /* 화면 가로폭의 80% */
-  max-height: 60vh;  /* 화면 세로 높이의 60% */
+  max-width: 80vw;
+  max-height: 60vh;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  cursor: pointer; /* 클릭 가능하다는 표시 */
 }
 
-/* ─────────────────── 메인 헤더 ─────────────────── */
+/* 메인 헤더 */
 .main-header {
   background: #fff;
   padding: 1rem;
@@ -110,73 +70,47 @@ body {
   justify-content: flex-end;
   border-bottom: 1px solid #ddd;
 }
-
 .header-right {
   display: flex;
   gap: 0.5rem;
 }
-
 .header-right .icon-btn {
   background: none;
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
 }
-
-/* ─────────────────── 광고 ─────────────────── */
+/* 광고 */
 .advertisement {
-  background: #fff;
-  padding: 1.5rem;
-  text-align: center;
-  margin: 1rem 0;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  background: #fff; padding: 1.5rem; text-align: center;
+  margin: 1rem 0; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
-/* ─────────────────── 상품 목록 ─────────────────── */
+/* 상품 목록 */
 .product-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-  margin-bottom: 3rem;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0.75rem; margin-bottom: 3rem;
 }
-
 .product-item {
-  background: #fff;
-  padding: 0.75rem;
-  border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  background: #fff; padding: 0.75rem; border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  display: flex; flex-direction: column; gap: 0.25rem;
 }
+.product-item .name { font-weight: bold; }
+.product-item .price { color: #007bff; }
+.product-item .loc   { font-size: 0.75rem; color: #555; }
 
-.product-item .product-name {
-  font-weight: bold;
-}
-
-.product-item .product-price {
-  color: #007bff;
-}
-
-.product-item .product-loc {
-  font-size: 0.75rem;
-  color: #555;
-}
-
-/* ─────────────────── 하단 네비게이션 바 ─────────────────── */
+/* 하단 네비 */
 .bottom-nav {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 0; right: 0;
   background: #fff;
   border-top: 1px solid #ddd;
   display: flex;
   justify-content: space-around;
   padding: 0.5rem 0;
 }
-
 .bottom-nav .nav-btn {
   background: none;
   border: none;
@@ -187,13 +121,13 @@ body {
   color: #555;
   cursor: pointer;
 }
-
+/* (네비 아이콘 글자 크기) */
 .bottom-nav .nav-icon {
   font-size: 1.3rem;
   margin-bottom: 0.2rem;
-}
 
-/* ─────────────────── Welcome 화면 ─────────────────── */
+/* ───── 추가: Welcome 화면 스타일 ───── */
+
 #welcome-screen {
   display: flex;
   justify-content: center;
@@ -202,44 +136,47 @@ body {
   background: #f5f5f5;
 }
 
+/* 래퍼를 inline-block 으로 변경해서 "이미지 실제 너비"만큼만 공간을 차지하게 */
 .welcome-wrapper {
   position: relative;
-  width: 80vw;     /* 이미지와 동일한 폭 */
-  height: 60vh;
-
+  display: inline-block; /* 기존: width:100%; max-width:480px; margin:0 auto; */
+  margin: 0 auto;
 }
 
+/* 
+  원본 비율 유지
+  화면 가로(뷰포트) 너비의 90% 이상으로는 늘어나지 않고,
+  화면 세로(뷰포트) 높이의 70% 이상으로도 늘어나지 않음
+*/
 .welcome-image {
-  pointer-events: none;
   display: block;
-  width: 100%;
-  height: 100%;
-  max-width: 80vw;   /* 화면 가로폭의 80% */
-  max-height: 60vh;  /* 화면 세로 높이의 60% */
+  width: auto;
+  height: auto;
+  max-width: 80vw;   /* 화면 너비의 90%까지만 확장 */
+  max-height: 60vh;  /* 화면 높이의 70%까지만 확장 */
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* z-index를 줘야 버튼이 이미지 위로 떠서 클릭 가능합니다 */
+/* 
+  이미지 위 하단 중앙에 크게 표시 
+  bottom: 5% 로 이미지 높이의 5% 위쪽에 배치 
+*/
 .start-btn {
- 
   position: absolute;
-  z-index: 10;
-  bottom: 5%;
+  bottom: 5%;              
   left: 50%;
   transform: translateX(-50%);
-  padding: 1.2rem 2.5rem;
-  font-size: 1.2rem;
+  padding: 1.2rem 2.5rem;      /* 버튼을 좀 더 크게 조정 */
+  font-size: 1.2rem;           /* 폰트 크기도 키움 */
   background: rgba(0, 123, 255, 0.9);
   color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 10;
 }
-
 .start-btn:hover {
   background: rgba(0, 123, 255, 1);
 }
