@@ -139,8 +139,8 @@ body {
 /* 래퍼를 inline-block 으로 변경해서 "이미지 실제 너비"만큼만 공간을 차지하게 */
 .welcome-wrapper {
   position: relative;
-  display: inline-block; /* 기존: width:100%; max-width:480px; margin:0 auto; */
-  margin: 0 auto;
+  width: 80vw;     /* 이미지와 동일한 폭 */
+  height: 60vh;
 }
 
 /* 
