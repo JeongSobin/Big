@@ -180,3 +180,60 @@ body {
 .start-btn:hover {
   background: rgba(0, 123, 255, 1);
 }
+
+
+#mypage-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 4rem; /* 네비게이션 공간 확보 */
+}
+
+.mypage-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.mypage-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.nickname {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.mypage-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 480px;
+}
+
+.mypage-menu li {
+  background: #fff;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.mypage-ad img {
+  width: 100%;
+  max-width: 480px;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
