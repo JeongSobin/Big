@@ -5,7 +5,7 @@ function showScreen(id) {
   document.getElementById(id).classList.add('active');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', () => {
   // ① '시작' 버튼 → 로그인 화면으로 전환
   document.getElementById('start-button').addEventListener('click', () => {
     showScreen('login-screen');
