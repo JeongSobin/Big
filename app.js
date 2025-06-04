@@ -55,11 +55,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ⑤ 메인화면 하단 마이페이지 버튼 → 마이페이지 화면으로 전환
-  const myPageBtn = document.querySelector('.bottom-nav .nav-btn:last-child');
-  if (myPageBtn) {
-    myPageBtn.addEventListener('click', () => {
-      showScreen('mypage-screen');
-    });
-  }
+  // ⑤ 마이페이지 버튼 클릭 시 마이페이지 화면으로 이동
+  const myPageBtn = document.querySelectorAll('.bottom-nav .nav-btn')[4];
+  myPageBtn.addEventListener('click', () => {
+    showScreen('mypage-screen');
+  });
 });
