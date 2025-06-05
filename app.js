@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
     showScreen('login-screen');
   });
 
-// ② '회원가입' 링크 클릭 → signup-screen으로 전환
+  // ② '회원가입' 링크 클릭 → signup-screen으로 전환
   document.getElementById('signup-link').addEventListener('click', e => {
     e.preventDefault();
     showScreen('signup-screen');
@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // ③ 회원가입 이미지 클릭 → check → open → 로그인으로 전환
   const signupImage = document.getElementById('signup-image');
   let clickCount = 0;
-  signupImage.addEventListener('click', () => {
+  signupImage?.addEventListener('click', () => {
     clickCount++;
     if (clickCount === 1) {
       signupImage.src = 'check.jpg';
@@ -33,8 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-
-  // ④ 로그인 폼 제출 → (예시) 메인 화면으로 전환 + 위치 요청
+  // ④ 로그인 폼 제출 → 메인 화면 전환 + 위치 요청 + 하단 네비게이션 표시
   document.getElementById('login-form').addEventListener('submit', e => {
     e.preventDefault();
     const id = document.getElementById('user-id').value.trim();
@@ -43,6 +42,10 @@ window.addEventListener('DOMContentLoaded', () => {
     if (id === 'test' && pw === '1234') {
       showScreen('main-screen');
 
+      // ✅ 로그인 성공 시 하단 메뉴 보이기
+      document.querySelector('.bottom-nav').classList.remove('hidden');
+
+      // 위치 정보 요청
       if ('geolocation' in navigator) {
         navigator.geolocation.getCurrentPosition(
           pos => console.log('위치 허용됨:', pos.coords),
@@ -55,8 +58,14 @@ window.addEventListener('DOMContentLoaded', () => {
       alert('아이디 또는 비밀번호가 잘못되었습니다.');
     }
   });
-});
-// 마이페이지 버튼 클릭 시 화면 전환
-document.querySelector('.nav-btn:last-child').addEventListener('click', function () {
-  showScreen('mypage-screen');
+
+  // ✅ 하단 네비게이션 버튼 클릭 시 해당 화면으로 전환
+  document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-target');
+      if (target) {
+        showScreen(target);
+      }
+    });
+  });
 });
