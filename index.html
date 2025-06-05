@@ -9,19 +9,15 @@
 </head>
 <body>
 
-  <!-- =========================================
-       ① Welcome 화면 (start.png + 시작 버튼)
-       ========================================= -->
+  <!-- ① Welcome 화면 -->
   <div id="welcome-screen" class="screen active">
     <div class="welcome-wrapper">
-      <img src="start.png" alt="Welcome 이미지" class=".welcome-image" />
+      <img src="start.png" alt="Welcome 이미지" class="welcome-image" />
       <button id="start-button" class="start-button">시작</button>
     </div>
   </div>
 
-  <!-- =========================================
-       ② 로그인 화면
-       ========================================= -->
+  <!-- ② 로그인 화면 -->
   <div id="login-screen" class="screen">
     <div class="login-container">
       <h1>로그인</h1>
@@ -37,18 +33,14 @@
     </div>
   </div>
 
-  <!-- =========================================
-       ③ 회원가입 화면 (signup-screen)
-       ========================================= -->
+  <!-- ③ 회원가입 화면 -->
   <div id="signup-screen" class="screen">
     <div class="signup-wrapper">
       <img src="signup.jpeg" alt="회원가입 이미지" id="signup-image" class="signup-image" />
     </div>
   </div>
 
-  <!-- =========================================
-       ④ 메인 화면 (로그인 성공 후)
-       ========================================= -->
+  <!-- ④ 메인 화면 -->
   <div id="main-screen" class="screen">
     <div class="main-header">
       <div class="header-right">
@@ -79,86 +71,76 @@
         <div class="product-loc">부산 해운대구</div>
       </div>
     </section>
-
-    <nav class="bottom-nav">
-      <button class="nav-btn">
-        <span class="nav-icon">🗂️</span>
-        <span class="nav-text">카테고리</span>
-      </button>
-      <button class="nav-btn">
-        <span class="nav-icon">📍</span>
-        <span class="nav-text">지도</span>
-      </button>
-      <button class="nav-btn">
-        <span class="nav-icon">🏠</span>
-        <span class="nav-text">홈</span>
-      </button>
-      <button class="nav-btn">
-        <span class="nav-icon">💬</span>
-        <span class="nav-text">채팅</span>
-      </button>
-      <button class="nav-btn">
-        <span class="nav-icon">👤</span>
-        <span class="nav-text">마이페이지</span>
-      </button>
-    </nav>
   </div>
-  <!-- =========================================
-     ⑤ 마이페이지 화면
-     ========================================= -->
-<!-- ⑤ 마이페이지 화면 (우끼끼 싸후르 프리미엄 에디션✨) -->
-<div id="mypage-screen" class="screen">
-  <div class="mypage-container">
 
-    <!-- 유저 정보 카드 -->
-    <div class="card user-card">
-      <div class="user-info">
-        <div class="profile-pic">👤</div>
-        <div>
-          <div class="username">응애</div>
-          <div class="user-meta">⭐ 5.0 · 후기 999+ · 팔로워 10K · 팔로잉 0</div>
+  <!-- ⑤ 마이페이지 화면 -->
+  <div id="mypage-screen" class="screen">
+    <div class="mypage-container">
+
+      <div class="card user-card">
+        <div class="user-info">
+          <div class="profile-pic">👤</div>
+          <div>
+            <div class="username">응애</div>
+            <div class="user-meta">⭐ 5.0 · 후기 999+ · 팔로워 10K · 팔로잉 0</div>
+          </div>
+        </div>
+        <div class="arrow">›</div>
+      </div>
+
+      <div class="card point-card">
+        <div class="point-text">
+          <div>번개포인트 <span class="amount">0원</span></div>
+          <div class="highlight">최대 413,402원 받기</div>
         </div>
       </div>
-      <div class="arrow">›</div>
-    </div>
 
-    <!-- 포인트 카드 -->
-    <div class="card point-card">
-      <div class="point-text">
-        <div>번개포인트 <span class="amount">0원</span></div>
-        <div class="highlight">최대 413,402원 받기</div>
+      <section class="advertisement">
+        <img src="banner_ad.png" alt="광고 배너" class="ad-image" />
+      </section>
+
+      <div class="tab-switch">
+        <button class="tab active">판매</button>
+        <button class="tab">구매</button>
       </div>
+
+      <div class="section-title">올해 번 금액 <strong>0원</strong></div>
+
+      <div class="grid-menu">
+        <div class="grid-item">🏷️<span>내 상품 관리</span></div>
+        <div class="grid-item">📦<span>판매내역</span></div>
+        <div class="grid-item">🚚<span>배송신청/관리</span></div>
+        <div class="grid-item">💬<span>내 상점 후기</span></div>
+        <div class="grid-item">💰<span>받은 가격제안</span></div>
+        <div class="grid-item">🛍️<span>내 소품</span></div>
+      </div>
+
     </div>
-
-    <!-- 광고 배너 -->
-    <section class="advertisement">
-      <img src="banner_ad.png" alt="광고 배너" class="ad-image" />
-    </section>
-
-
-    <!-- 탭 버튼 -->
-    <div class="tab-switch">
-      <button class="tab active">판매</button>
-      <button class="tab">구매</button>
-    </div>
-
-    <!-- 올해 번 금액 -->
-    <div class="section-title">올해 번 금액 <strong>0원</strong></div>
-
-    <!-- 기능 그리드 -->
-    <div class="grid-menu">
-      <div class="grid-item">🏷️<span>내 상품 관리</span></div>
-      <div class="grid-item">📦<span>판매내역</span></div>
-      <div class="grid-item">🚚<span>배송신청/관리</span></div>
-      <div class="grid-item">💬<span>내 상점 후기</span></div>
-      <div class="grid-item">💰<span>받은 가격제안</span></div>
-      <div class="grid-item">🛍️<span>내 쇼품</span></div>
-    </div>
-
   </div>
-</div>
 
-  
+  <!-- ✅ 공통 하단 네비게이션: 로그인 후만 보여짐 -->
+  <nav class="bottom-nav hidden">
+    <button class="nav-btn" data-target="category-screen">
+      <span class="nav-icon">🗂️</span>
+      <span class="nav-text">카테고리</span>
+    </button>
+    <button class="nav-btn" data-target="map-screen">
+      <span class="nav-icon">📍</span>
+      <span class="nav-text">지도</span>
+    </button>
+    <button class="nav-btn" data-target="main-screen">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-text">홈</span>
+    </button>
+    <button class="nav-btn" data-target="chat-screen">
+      <span class="nav-icon">💬</span>
+      <span class="nav-text">채팅</span>
+    </button>
+    <button class="nav-btn" data-target="mypage-screen">
+      <span class="nav-icon">👤</span>
+      <span class="nav-text">마이페이지</span>
+    </button>
+  </nav>
+
 </body>
 </html>
-
