@@ -143,44 +143,38 @@ body {
   height: 60vh;
 }
 
-/* 
-  원본 비율 유지
-  화면 가로(뷰포트) 너비의 90% 이상으로는 늘어나지 않고,
-  화면 세로(뷰포트) 높이의 70% 이상으로도 늘어나지 않음
-*/
+/* Welcome 이미지 스타일 조정 */
 .welcome-image {
   display: block;
-  width: 100%;
-  height: 100%;
-  max-width: 40vw;   /* 화면 너비의 90%까지만 확장 */
-  max-height: 25vh;  /* 화면 높이의 70%까지만 확장 */
+  width: 60%;              /* 실제 크기 조절 */
+  height: auto;            /* 비율 유지 */
+  max-width: 300px;        /* 최대 너비 제한 */
+  max-height: 200px;       /* 최대 높이 제한 */
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 0 auto;          /* 가운데 정렬 */
 }
 
-/* 
-  이미지 위 하단 중앙에 크게 표시 
-  bottom: 5% 로 이미지 높이의 5% 위쪽에 배치 
-*/
+/* 시작 버튼 스타일 조정 */
 .start-btn {
   position: absolute;
-  bottom: 5%;              
+  bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
-  padding: 1.6rem 3.2rem;      /* 버튼을 좀 더 크게 조정 */
-  font-size: 1.5rem;           /* 폰트 크기도 키움 */
+  padding: 1.4rem 3rem;     /* 버튼 크기 증가 */
+  font-size: 1.4rem;        /* 글자 크기 증가 */
   background: rgba(0, 123, 255, 0.9);
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   z-index: 10;
 }
+
 .start-btn:hover {
   background: rgba(0, 123, 255, 1);
 }
-
 
 /* 마이페이지 전체 설정 */
 #mypage-screen {
