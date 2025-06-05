@@ -182,37 +182,45 @@ body {
 }
 
 
-/* 깔끔한 마이페이지 스타일 */
+/* 전체 컨테이너 */
 #mypage-screen {
   background: #f9f9f9;
-  padding: 16px;
+  padding: 20px;
   font-family: 'Pretendard', sans-serif;
+  min-height: 100vh;
 }
 
-.profile-card, .point-card {
+.mypage-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* 프로필 카드 */
+.profile-card {
   background: #fff;
   border-radius: 12px;
-  padding: 14px 16px;
-  margin-bottom: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.profile-info {
+.profile-left {
   display: flex;
   align-items: center;
 }
 
 .profile-icon {
-  font-size: 36px;
-  margin-right: 12px;
+  font-size: 40px;
+  margin-right: 14px;
 }
 
 .profile-name {
-  font-weight: 600;
   font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4px;
 }
 
 .profile-stats {
@@ -221,12 +229,21 @@ body {
 }
 
 .profile-arrow {
-  font-size: 20px;
+  font-size: 22px;
   color: #ccc;
 }
 
-.point-left, .point-right {
+/* 포인트 카드 */
+.point-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .highlight {
@@ -234,18 +251,24 @@ body {
   font-weight: bold;
 }
 
+/* 메뉴 그리드 */
 .grid-menu {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 20px;
+  gap: 14px;
 }
 
 .grid-item {
   background: #fff;
   border-radius: 10px;
+  padding: 16px 0;
   text-align: center;
-  padding: 16px 8px;
-  font-size: 14px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  font-size: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.grid-label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 6px;
 }
