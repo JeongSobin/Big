@@ -152,8 +152,8 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  max-width: 200px;   /* 화면 너비의 90%까지만 확장 */
-  max-height: 400px;  /* 화면 높이의 70%까지만 확장 */
+  max-width: 100px;   /* 화면 너비의 90%까지만 확장 */
+  max-height: 200px;  /* 화면 높이의 70%까지만 확장 */
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
