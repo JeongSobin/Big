@@ -180,3 +180,77 @@ body {
 .start-btn:hover {
   background: rgba(0, 123, 255, 1);
 }
+
+
+/* 마이페이지 기본 레이아웃 */
+#mypage-screen {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.profile-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f6f6f6;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.shop-icon {
+  font-size: 36px;
+  margin-right: 10px;
+}
+
+.shop-info .shop-name {
+  font-weight: bold;
+}
+
+.points-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #eee;
+}
+
+.tab-btn.active {
+  background: black;
+  color: white;
+}
+
+.mypage-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-item {
+  background: #fafafa;
+  padding: 16px;
+  border-radius: 10px;
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+}
