@@ -6,8 +6,13 @@ function showScreen(id) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  // ① '시작' 버튼 → 로그인 화면으로 전환
+  const welcomeScreen = document.getElementById('welcome-screen');
+
+  // ① '시작' 버튼 클릭 → welcome-screen을 완전히 숨기고 로그인으로 전환
   document.getElementById('start-button').addEventListener('click', () => {
+    // 웰컴 화면 자체를 display: none; 처리
+    welcomeScreen.style.display = 'none';
+    // 그리고 로그인 화면에 active 붙여서 표시
     showScreen('login-screen');
   });
 
