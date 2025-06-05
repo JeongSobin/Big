@@ -19,6 +19,9 @@ html, body {
 }
 .screen.active {
   display: block;
+  flex-direction: column; /* 필요하다면 세로 정렬 */
+  justify-content: center;/* 내부를 세로 방향 중앙 정렬 */
+  align-items: center;    /* 내부를 가로 방향 중앙 정렬 */
 }
 
 /* 숨김 클래스 */
