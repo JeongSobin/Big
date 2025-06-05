@@ -162,7 +162,7 @@ body {
   이미지 위 하단 중앙에 크게 표시 
   bottom: 5% 로 이미지 높이의 5% 위쪽에 배치 
 */
-.start-btn {
+.start-button {
   position: absolute;
   bottom: 5%;              
   left: 50%;
@@ -177,7 +177,7 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   z-index: 10;
 }
-.start-btn:hover {
+.start-button:hover {
   background: rgba(0, 123, 255, 1);
 }
 
