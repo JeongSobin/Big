@@ -56,4 +56,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
+// 마이페이지 버튼 클릭 시 화면 전환
+document.querySelector('.nav-btn:last-child').addEventListener('click', function () {
+  showScreen('mypage-screen');
+});
