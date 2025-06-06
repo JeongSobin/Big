@@ -5,6 +5,47 @@ function showScreen(id) {
   document.getElementById(id)?.classList.add('active');
 }
 
+// 상품 상세 정보 보여주는 함수
+function showProductDetail(key) {
+  showScreen('product-detail-screen');
+
+  const imgEl   = document.getElementById('detail-image');
+  const nameEl  = document.getElementById('detail-name');
+  const priceEl = document.getElementById('detail-price');
+  const locEl   = document.getElementById('detail-loc');
+  const descEl  = document.getElementById('detail-desc');
+
+  if (key === 'notebook') {
+    imgEl.src = 'notebook.png';
+    imgEl.alt = '노트북 이미지';
+    nameEl.textContent  = '노트북';
+    priceEl.textContent = '₩40,000(주)';
+    locEl.textContent   = '대구 수성구';
+    descEl.textContent  =
+      '▶ 16인치 고성능 노트북 (i7-10750H / RAM 16GB / SSD 512GB)\n' +
+      '▶ 외관 깔끔, 사용감 조금 있음\n' +
+      '▶ 배터리 성능 양호, 충전기 포함, RAM 16GB\n' +
+      '▶ 직거래: 수성구 범어동 근처';
+  } else if (key === 'camping') {
+    imgEl.src = 'camping.png';
+    imgEl.alt = '캠핑용품 이미지';
+    nameEl.textContent  = '캠핑용품';
+    priceEl.textContent = '₩60,000';
+    locEl.textContent   = '대구 중구';
+    descEl.textContent  =
+      '▶ 최신식 풀세트 캠핑용품\n' +
+      '▶ 외관 깔끔, 최대 6인 텐트, 테이블 오염 주의 부탁드려요~!\n' +
+      '▶ 직거래: 중구 계산동 근처';
+  } else {
+    imgEl.src = '';
+    imgEl.alt = '';
+    nameEl.textContent  = '알 수 없는 제품';
+    priceEl.textContent = '';
+    locEl.textContent   = '';
+    descEl.textContent  = '등록된 정보가 없습니다.';
+  }
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   const welcomeScreen = document.getElementById('welcome-screen');
 
@@ -75,21 +116,17 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-// ⑦ “내 상품 관리” 버튼 클릭 → my-products-screen 표시
-const manageBtn = document.getElementById('manage-products-btn');
-if (manageBtn) {
-  manageBtn.addEventListener('click', () => {
+  // ⑦ 내 상품 관리 버튼 클릭
+  const manageBtn = document.getElementById('manage-products-btn');
+  manageBtn?.addEventListener('click', () => {
     showScreen('my-products-screen');
   });
-}
 
-// ⑧ “← 뒤로” 버튼 클릭 → mypage-screen으로 돌아가기
-const backBtn = document.getElementById('back-to-mypage');
-if (backBtn) {
-  backBtn.addEventListener('click', () => {
+  // ⑧ “← 뒤로” 버튼 클릭 → mypage-screen으로
+  const backBtn = document.getElementById('back-to-mypage');
+  backBtn?.addEventListener('click', () => {
     showScreen('mypage-screen');
   });
-}
 
   // ✅ 빠른 매칭 팝업 열기
   document.querySelector('.quick-match-btn')?.addEventListener('click', () => {
@@ -100,64 +137,17 @@ if (backBtn) {
   document.getElementById('close-popup-btn')?.addEventListener('click', () => {
     document.getElementById('matching-popup')?.classList.add('hidden');
   });
+
+  // ⑨ 내 상품 목록에서 아이템 클릭 → 상세화면
+  document.querySelectorAll('#my-products-screen .product-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const key = item.getAttribute('data-product');
+      showProductDetail(key);
+    });
+  });
+
+  // 🔙 상세 화면 → 내 상품 관리로 돌아가기
+  document.getElementById('back-to-my-products')?.addEventListener('click', () => {
+    showScreen('my-products-screen');
+  });
 });
-
-
-// ─────────────────────────────────────────────────────────────────
-// (이미 작성된 코드 맨 아래에 붙여주세요.)
-// ─────────────────────────────────────────────────────────────────
-
-
-// ⑨ “내 상품 관리” 화면이 활성화된 뒤, 각 상품을 클릭했을 때 상세화면으로 이동
-function showProductDetail(key) {
-  // 상세 화면 띄우기
-  showScreen('product-detail-screen');
-
-  // 요소 가져오기
-  const imgEl   = document.getElementById('detail-image');
-  const nameEl  = document.getElementById('detail-name');
-  const priceEl = document.getElementById('detail-price');
-  const locEl   = document.getElementById('detail-loc');
-  const descEl  = document.getElementById('detail-desc');
-
-  // key에 따라 정보 세팅
-  if (key === 'notebook') {
-    imgEl.src      = 'notebook.png';
-    imgEl.alt      = '노트북 이미지';
-    nameEl.textContent  = '노트북';
-    priceEl.textContent = '₩40,000(주)';
-    locEl.textContent   = '대구 수성구';
-    descEl.textContent  =
-      '▶ 16인치 고성능 노트북 (i7-10750H / RAM 16GB / SSD 512GB)\n' +
-      '▶ 외관 깔끔, 사용감 조금 있음\n' +
-      '▶ 배터리 성능 양호, 충전기 포함, RAM 16GB\n' +
-      '▶ 직거래: 수성구 범어동 근처';
-  }
-  else if (key === 'camping') {
-    imgEl.src      = 'camping.png';
-    imgEl.alt      = '캠핑용품 이미지';
-    nameEl.textContent  = '캠핑용품';
-    priceEl.textContent = '₩60,000';
-    locEl.textContent   = '대구 중구';
-    descEl.textContent  =
-      '▶ 최신식 풀세트 캠핑용품\n' +
-      '▶ 외관 깔끔, 최대 6인 텐트, 테이블 오염 주의 부탁드려요~!\n' +
-      '▶ 직거래: 중구 계산동 근처';
-  }
-  else {
-    // 이외의 key일 때
-    imgEl.src      = '';
-    imgEl.alt      = '';
-    nameEl.textContent  = '알 수 없는 제품';
-    priceEl.textContent = '';
-    locEl.textContent   = '';
-    descEl.textContent  = '등록된 정보가 없습니다.';
-  }
-}
-
-// … 중략 …
-
-document.getElementById('back-to-my-products')?.addEventListener('click', () => {
-  showScreen('my-products-screen');
-});
-
