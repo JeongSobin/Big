@@ -152,24 +152,20 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-  // QR 보기 버튼 클릭 시 send.png 화면으로 전환
+  // QR 버튼 누르면 send 화면으로 전환하고, 그 다음에 클릭 이벤트 등록!
   document.getElementById('qr-button')?.addEventListener('click', () => {
     showScreen('send-screen');
+  
+    // 이미지가 나타난 뒤에 이벤트 등록
+    setTimeout(() => {
+      const sendImage = document.getElementById('send-image');
+      if (sendImage) {
+        sendImage.addEventListener('click', () => {
+          window.open('qr.png', '_blank');
+        }, { once: true }); // 한 번만 클릭 가능하게!
+      }
+    }, 100); // 살짝 지연을 줘서 DOM에 요소가 생긴 후 등록
   });
-  // QR 버튼 누르면 send 화면으로 전환하고, 그 다음에 클릭 이벤트 등록!
-document.getElementById('qr-button')?.addEventListener('click', () => {
-  showScreen('send-screen');
-
-  // 이미지가 나타난 뒤에 이벤트 등록
-  setTimeout(() => {
-    const sendImage = document.getElementById('send-image');
-    if (sendImage) {
-      sendImage.addEventListener('click', () => {
-        window.open('qr.png', '_blank');
-      }, { once: true }); // 한 번만 클릭 가능하게!
-    }
-  }, 100); // 살짝 지연을 줘서 DOM에 요소가 생긴 후 등록
-});
 
   document.getElementById('qr-button')?.addEventListener('click', () => {
     window.open('qr.png', '_blank'); // qr.png 새 창에서 열기!
