@@ -96,29 +96,25 @@ body {
   background: #f5f5f5;
 }
 
+/* 1) 로그인 박스보다 약간 더 작게: width: 80%로 줄임 */
 .signup-wrapper {
-  /* 로그인 컨테이너와 동일한 너비/최대너비 */
-  width: 90%;
-  max-width: 480px;
-
-  /* 로그인 컨테이너과 동일한 상단 여백 (10vh) */
-  margin-top: 10vh;
-
-  /* 자동 가로 중앙 정렬 */
+  width: 80%;       /* 화면 너비의 80% */
+  max-width: 400px; /* 최대 400px로 제한 (원래 480px에서 줄임) */
+  margin-top: 10vh; /* 로그인 박스과 동일한 상단 여백 */
   margin-left: auto;
   margin-right: auto;
-
-  /* 내부 이미지가 박스 안에서 비율 유지하며 차지하도록 */
   height: auto;
 }
 
+/* 2) 이미지 높이도 화면의 60% 이하로 제한해 줌 */
 .signup-image {
-  width: 100%;            /* 부모(.signup-wrapper) 너비 100% */
-  height: auto;           /* 세로는 비율에 따라 자동으로 */
-  object-fit: contain;    /* 찌그러짐 없이 비율 유지 */
-  border-radius: 8px;     /* 로그인 컨테이너랑 같은 둥글기 */
+  width: 100%;
+  height: auto;
+  max-height: 60vh;      /* 브라우저 높이의 60% 이상 커지지 않도록 */
+  object-fit: contain;
+  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: block;         /* 블록-level 요소로 */
+  display: block;
   cursor: pointer;
 }
 
