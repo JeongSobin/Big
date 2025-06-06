@@ -270,10 +270,16 @@ body {
   background: rgba(0, 123, 255, 1);
 }
 
+/* 전체 화면에 꽉 차지만 bottom-nav 영역은 비워줌 */
+#map-screen {
+  padding-bottom: 60px; /* nav 높이만큼 공간 확보 */
+}
+
 .full-map {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 60px); /* 하단 nav를 가리지 않게 */
   object-fit: cover;
+  display: block;
 }
 
 
