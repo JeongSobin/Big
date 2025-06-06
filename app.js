@@ -64,6 +64,19 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // 메인 화면 정렬 버튼 클릭 시 active 상태 토글
+document.querySelectorAll('.sort-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    // 모든 버튼에서 active 해제
+    document.querySelectorAll('.sort-btn').forEach(x => x.classList.remove('active'));
+    // 클릭된 버튼에 active 추가
+    btn.classList.add('active');
+
+    // (여기에서 실제 정렬 기능을 추가할 수도 있음)
+    // 예: if (btn.textContent === '거리순') { sortByDistance(); }
+  });
+});
+  
   // ✅ 하단 네비게이션 버튼 클릭 시 해당 화면으로 전환
   document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.addEventListener('click', () => {
