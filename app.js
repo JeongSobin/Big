@@ -130,7 +130,7 @@ function showProductDetail(key) {
     descEl.textContent  =
       '▶ 16인치 고성능 노트북 (i7-10750H / RAM 16GB / SSD 512GB)\n' +
       '▶ 외관 깔끔, 사용감 조금 있음\n' +
-      '▶ 배터리 성능 양호, 충전기 포함, LAM 16G\n' +
+      '▶ 배터리 성능 양호, 충전기 포함, RAM 16GB\n' +
       '▶ 직거래: 수성구 범어동 근처';
   }
   else if (key === 'camping') {
