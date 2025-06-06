@@ -167,7 +167,7 @@ window.addEventListener('DOMContentLoaded', () => {
   
         newImage.addEventListener('click', () => {
           window.open('qr.png', '_blank');
-        } // 클릭 한 번만 되게!
+        }, {once: true}); // 클릭 한 번만 되게!
       }
     });
   });
