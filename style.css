@@ -181,22 +181,33 @@ body {
   max-width: 480px;
   margin-bottom: 100px; /* 하단 네비 공간 확보 */
 }
+
+/* (1) .product-item: flex-row-reverse 로 변경하여 이미지가 우측에 오도록 */
 .product-item {
   background: #fff;
-  padding: 0.75rem;
-  border-radius: 4px;
+  border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  display: flex;                    /* flex 컨테이너 시작 */
+  flex-direction: row-reverse;      /* 이미지가 오른쪽, 텍스트가 왼쪽 */
+  align-items: center;              /* 세로 가운데 정렬 */
+  padding: 0.75rem;                 /* 내부 여백 */
+  gap: 0.75rem;                     /* 이미지와 텍스트 간격 */
 }
 
-/* 1) 제품 이미지 스타일 */
+/* (2) 제품 이미지 스타일 */
 .product-img {
-  width: 80px;                  /* 이미지 고정 너비 */
-  height: 80px;                 /* 이미지 고정 높이 */
-  object-fit: cover;            /* 비율에 맞게 잘라서 채움 */
-  border-radius: 4px;           /* 약간의 둥근 모서리 */
+  width: 80px;                      /* 고정 너비 */
+  height: 80px;                     /* 고정 높이 */
+  object-fit: cover;                /* 이미지 비율을 유지하며 채우기 */
+  border-radius: 4px;               /* 모서리 라운드 */
+}
+
+/* (3) 텍스트 묶음(.product-info) 스타일 */
+.product-info {
+  display: flex;                    
+  flex-direction: column;           /* 세로로 쌓기 */
+  gap: 0.25rem;                     /* 항목 간 간격 */
+  flex: 1;                          /* 남은 공간 모두 차지 */
 }
 
 .product-item .name {
