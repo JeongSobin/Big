@@ -92,22 +92,22 @@ document.querySelectorAll('.sort-btn').forEach(btn => {
   // ========================================
   // ⑦ “내 상품 관리” 버튼 클릭 → my-products-screen 표시
   // ========================================
-  const manageBtn = document.getElementById('manage-products-btn');
-  if (manageBtn) {
-     manageBtn.addEventListener('click', () => {
-       showScreen('my-products-screen');
-      });
-    }
+const manageBtn = document.getElementById('manage-products-btn');
+if (manageBtn) {
+    manageBtn.addEventListener('click', () => {
+      showScreen('my-products-screen');
+    });
+  }
   
     // ========================================
     // ⑧ “← 뒤로” 버튼 클릭 → mypage-screen으로 돌아가기
     // ========================================
-  const backBtn = document.getElementById('back-to-mypage');
-  if (backBtn) {
-    backBtn.addEventListener('click', () => {
-      showScreen('mypage-screen');
-    });
-  }
+const backBtn = document.getElementById('back-to-mypage');
+if (backBtn) {
+  backBtn.addEventListener('click', () => {
+    showScreen('mypage-screen');
+  });
+}
 
 
 // ✅ 빠른 매칭 버튼 누르면 팝업 열기
