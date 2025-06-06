@@ -89,15 +89,7 @@ document.querySelectorAll('.sort-btn').forEach(btn => {
 });
 
 
-  // 🟢 “내 상품 관리” 버튼 클릭 → 내 상품 관리 화면 출력
-document.getElementById('manage-products-btn').addEventListener('click', () => {
-  showScreen('my-products-screen');
-});
 
-  // 🔙 뒤로 버튼 클릭 → 마이페이지 화면으로 복귀
-document.getElementById('back-to-mypage').addEventListener('click', () => {
-  showScreen('mypage-screen');
-});
 // ✅ 빠른 매칭 버튼 누르면 팝업 열기
 document.querySelector('.quick-match-btn')?.addEventListener('click', () => {
   document.getElementById('matching-popup').classList.remove('hidden');
