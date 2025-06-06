@@ -5,7 +5,22 @@ function showScreen(id) {
   document.getElementById(id)?.classList.add('active');
 }
 
-// 상품 상세 정보 보여주는 함수
+// ↓↓↓ 여기에 doLoginSuccess() 함수를 추가합니다.
+function doLoginSuccess() {
+  // 메인 화면으로 전환 + 하단 네비게이션 보이기 + 위치 요청
+  showScreen('main-screen');
+  document.querySelector('.bottom-nav')?.classList.remove('hidden');
+
+  if ('geolocation' in navigator) {
+    navigator.geolocation.getCurrentPosition(
+      pos => console.log('위치 허용됨:', pos.coords),
+      err => console.warn('위치 요청 에러:', err.message)
+    );
+  } else {
+    alert('이 브라우저는 Geolocation을 지원하지 않습니다.');
+  }
+}
+
 function showProductDetail(key) {
   showScreen('product-detail-screen');
 
@@ -61,8 +76,7 @@ window.addEventListener('DOMContentLoaded', () => {
     showScreen('signup-screen');
   });
 
-  // ③ 회원가입 이미지 클릭
- // ③ 회원가입 이미지 클릭 → check → open → 로그인(또는 자동로그인)으로 전환
+  // ③ 회원가입 이미지 클릭 → check → open → 자동로그인
   const signupImage = document.getElementById('signup-image');
   let clickCount = 0;
   signupImage?.addEventListener('click', () => {
@@ -72,7 +86,7 @@ window.addEventListener('DOMContentLoaded', () => {
     } else if (clickCount === 2) {
       signupImage.src = 'open.jpg';
     } else {
-      // 3회 클릭되었을 때: 이미지 순환 초기화 + 자동로그인
+      // 3회 클릭된 시점에 자동로그인 처리
       clickCount = 0;
       signupImage.src = 'signup.jpeg';
       doLoginSuccess();
@@ -86,17 +100,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const pw = document.getElementById('user-pw').value.trim();
 
     if (id === 'test' && pw === '1234') {
-      showScreen('main-screen');
-      document.querySelector('.bottom-nav')?.classList.remove('hidden');
-
-      if ('geolocation' in navigator) {
-        navigator.geolocation.getCurrentPosition(
-          pos => console.log('위치 허용됨:', pos.coords),
-          err => console.warn('위치 요청 에러:', err.message)
-        );
-      } else {
-        alert('이 브라우저는 Geolocation을 지원하지 않습니다.');
-      }
+      doLoginSuccess();
     } else {
       alert('아이디 또는 비밀번호가 잘못되었습니다.');
     }
@@ -154,30 +158,30 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-  // QR 보기 버튼 클릭 시 send.png 화면 → 클릭하면 qr.png → 다시 클릭하면 상품 상세로!
-  document.getElementById('qr-button')?.addEventListener('click', () => {
-    showScreen('send-screen');
-  
-    requestAnimationFrame(() => {
-      const sendImage = document.getElementById('send-image');
-  
-      if (sendImage) {
-        // 클릭 이벤트를 초기화하기 위해 이미지 새로 복제!
-        const newImage = sendImage.cloneNode(true);
-        sendImage.replaceWith(newImage);
-  
-        let clickCount = 0;
-  
-        newImage.addEventListener('click', () => {
-          clickCount++;
-  
-          if (clickCount === 1) {
-            newImage.src = 'qr.png'; // 첫 클릭 → QR 이미지로 변경
-          } else if (clickCount === 2) {
-            clickCount = 0;
-            showScreen('product-detail-screen'); // 두 번째 클릭 → 상세 화면 복귀
-          }
-        });
-      }
-    });
+// QR 보기 버튼 클릭 시 send.png 화면 → 클릭하면 qr.png → 다시 클릭하면 상품 상세로!
+document.getElementById('qr-button')?.addEventListener('click', () => {
+  showScreen('send-screen');
+
+  requestAnimationFrame(() => {
+    const sendImage = document.getElementById('send-image');
+
+    if (sendImage) {
+      // 클릭 이벤트를 초기화하기 위해 이미지 새로 복제!
+      const newImage = sendImage.cloneNode(true);
+      sendImage.replaceWith(newImage);
+
+      let clickCount = 0;
+
+      newImage.addEventListener('click', () => {
+        clickCount++;
+
+        if (clickCount === 1) {
+          newImage.src = 'qr.png'; // 첫 클릭 → QR 이미지로 변경
+        } else if (clickCount === 2) {
+          clickCount = 0;
+          showScreen('product-detail-screen'); // 두 번째 클릭 → 상세 화면 복귀
+        }
+      });
+    }
   });
+});
