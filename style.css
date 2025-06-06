@@ -626,10 +626,17 @@ body {
 
 /* 상세 전체 컨테이너 */
 #product-detail-screen .detail-container {
+  position: relative;
   width: 90%;
   max-width: 480px;
-  margin: 0 auto; /* 중앙 정렬 */
-  padding-top: 10vh; /* 상단 여백 */
+  /* 아래쪽 네비까지 고려해서 약간의 패딩 주기 */
+  padding-bottom: 80px; /* 필요 시 높이 조절 (네비 높이 여유) */
+  margin: 0 auto;
+  margin-top: 10vh;
+
+  /* 화면 내 세로 스크롤 활성화 */
+  max-height: calc(100vh - 10vh - 80px); /* 위쪽 헤더 + 네비 탭 높이만큼 제외 */
+  overflow-y: auto;
   box-sizing: border-box;
 }
 
