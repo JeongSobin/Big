@@ -158,6 +158,6 @@ function showProductDetail(key) {
 // … 중략 …
 
 document.getElementById('back-to-my-products')?.addEventListener('click', () => {
-  showScreen('product-detail-screen');
+  showScreen('my-products-screen');
 });
 
