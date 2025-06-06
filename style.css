@@ -91,7 +91,7 @@ body {
 
 /* 1) 회원가입 화면 자체를 full-screen(100% 높이)로 덮어쓰기 */
 #signup-screen {
-  display: flex;               /* 중간에 정렬하기 위해 flex 사용 */
+ 
   justify-content: center;     /* 가로 중앙 정렬 */
   align-items: center;         /* 세로 중앙 정렬 */
   background: #f5f5f5;
