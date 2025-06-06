@@ -52,11 +52,9 @@ body {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: center;
-  margin-top: 10vh;
-  max-width: 480px;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 90%;        /* 화면 너비의 90% */
+  max-width: 480px;  /* 최대 480px */
+  margin: 10vh auto 0 auto; /* 상단 여백 10vh, 좌우 자동 중앙 정렬 */
 }
 .login-container h1 {
   margin-bottom: 1rem;
