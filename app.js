@@ -100,3 +100,12 @@ document.getElementById('close-popup-btn')?.addEventListener('click', () => {
   document.getElementById('matching-popup').classList.add('hidden');
 });
 
+  // 🟢 “내 상품 관리” 버튼 클릭 → 내 상품 관리 화면 출력
+  document.getElementById('manage-products-btn').addEventListener('click', () => {
+    showScreen('my-products-screen');
+  });
+
+  // 🔙 뒤로 버튼 클릭 → 마이페이지 화면으로 복귀
+  document.getElementById('back-to-mypage').addEventListener('click', () => {
+    showScreen('mypage-screen');
+  });
