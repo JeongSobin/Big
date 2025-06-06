@@ -93,7 +93,7 @@ document.querySelectorAll('.sort-btn').forEach(btn => {
   // ⑦ “내 상품 관리” 버튼 클릭 → my-products-screen 표시
   // ========================================
   const manageBtn = document.getElementById('manage-products-btn');
-   if (manageBtn) {
+  if (manageBtn) {
      manageBtn.addEventListener('click', () => {
        showScreen('my-products-screen');
       });
