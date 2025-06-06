@@ -190,11 +190,22 @@ body {
   flex-direction: column;
   gap: 0.25rem;
 }
+
+/* 1) 제품 이미지 스타일 */
+.product-img {
+  width: 80px;                  /* 이미지 고정 너비 */
+  height: 80px;                 /* 이미지 고정 높이 */
+  object-fit: cover;            /* 비율에 맞게 잘라서 채움 */
+  border-radius: 4px;           /* 약간의 둥근 모서리 */
+}
+
 .product-item .name {
   font-weight: bold;
+  font-size: 1rem;
 }
 .product-item .price {
   color: #007bff;
+  font-size: 0.95rem;
 }
 .product-item .loc {
   font-size: 0.75rem;
