@@ -152,22 +152,30 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-  // QR 보기 버튼 클릭 시 send.png 화면 → 클릭하면 qr.png 열기
+  // QR 보기 버튼 클릭 시 send.png 화면 → 클릭하면 qr.png → 다시 클릭하면 상품 상세로!
   document.getElementById('qr-button')?.addEventListener('click', () => {
     showScreen('send-screen');
   
-    // DOM이 갱신되고 나서 이미지 클릭 이벤트 붙이기
     requestAnimationFrame(() => {
       const sendImage = document.getElementById('send-image');
   
       if (sendImage) {
-        // 기존에 붙은 클릭 이벤트를 제거하기 위해 이미지 교체
+        // 클릭 이벤트를 초기화하기 위해 이미지 새로 복제!
         const newImage = sendImage.cloneNode(true);
         sendImage.replaceWith(newImage);
   
+        let clickCount = 0;
+  
         newImage.addEventListener('click', () => {
-          window.open('qr.png', '_blank');
-        }, {once: true}); // 클릭 한 번만 되게!
+          clickCount++;
+  
+          if (clickCount === 1) {
+            newImage.src = 'qr.png'; // 첫 클릭 → QR 이미지로 변경
+          } else if (clickCount === 2) {
+            clickCount = 0;
+            showScreen('product-detail-screen'); // 두 번째 클릭 → 상세 화면 복귀
+          }
+        });
       }
     });
   });
