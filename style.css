@@ -87,7 +87,7 @@ body {
 /*                        회원가입 화면 (#signup-screen)                 */
 /* ────────────────────────────────────────────────────────── */
 
-/* 화면 자체는 위 .screen 규칙에 따라 숨겨져 있다가 active 시 display:flex */
+/* 2) #signup-screen 자체 배경 색만 지정 */
 #signup-screen {
   background: #f5f5f5;
 }
