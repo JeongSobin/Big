@@ -322,6 +322,22 @@ body {
   flex: 1;
 }
 
+.qr-button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.qr-button:hover {
+  background-color: #e68900;
+}
+
+
 /* ───── 추가: Welcome 화면 스타일 ───── */
 
 #welcome-screen {
