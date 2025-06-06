@@ -74,3 +74,13 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+// ✅ 빠른 매칭 버튼 누르면 팝업 열기
+document.querySelector('.quick-match-btn')?.addEventListener('click', () => {
+  document.getElementById('matching-popup').classList.remove('hidden');
+});
+
+// ✅ 팝업 닫기 버튼
+document.getElementById('close-popup-btn')?.addEventListener('click', () => {
+  document.getElementById('matching-popup').classList.add('hidden');
+});
+
