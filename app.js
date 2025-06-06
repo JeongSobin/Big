@@ -130,18 +130,18 @@ function showProductDetail(key) {
     descEl.textContent  =
       '▶ 16인치 고성능 노트북 (i7-10750H / RAM 16GB / SSD 512GB)\n' +
       '▶ 외관 깔끔, 사용감 조금 있음\n' +
-      '▶ 배터리 잔량 양호, 충전기 포함\n' +
-      '▶ 직거래: 수성구 신매동 근처';
+      '▶ 배터리 성능 양호, 충전기 포함, LAM 16G\n' +
+      '▶ 직거래: 수성구 범어동 근처';
   }
-  else if (key === 'washer') {
-    imgEl.src      = 'washer.png';
-    imgEl.alt      = '세탁기 이미지';
-    nameEl.textContent  = '세탁기';
-    priceEl.textContent = '₩100,000(월)';
+  else if (key === 'camping') {
+    imgEl.src      = 'camping.png';
+    imgEl.alt      = '캠핑용품 이미지';
+    nameEl.textContent  = '캠핑용품';
+    priceEl.textContent = '₩60,000';
     locEl.textContent   = '대구 중구';
     descEl.textContent  =
-      '▶ 7kg 전자동 세탁기\n' +
-      '▶ 외관 깔끔, 정상 작동 확인\n' +
+      '▶ 최신식 풀세트 캠핑용품\n' +
+      '▶ 외관 깔끔, 최대 6인 텐트, 테이블 오염 주의 부탁드려요~!\n' +
       '▶ 직거래: 중구 계산동 근처';
   }
   else {
