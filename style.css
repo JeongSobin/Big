@@ -238,36 +238,38 @@ body {
 }
 .welcome-wrapper {
   position: relative;
-  width: 80vw;
-  height: 60vh;
-}
-.welcome-image {
-  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: contain;  /* 비율을 유지하면서 영역 가득 채우기 */
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  pointer-events: none; /* 이미지 자체는 클릭 무시 (버튼 클릭이 잘 되도록) */
-}
-.start-btn {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%); /* ✅ 버튼을 수평 중앙에 위치 */
-  padding: 1.2rem 2.5rem;
-  font-size: 1.2rem;
-  background: rgba(0, 123, 255, 0.9);
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  z-index: 10;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-.start-btn:hover {
-  background: rgba(0, 123, 255, 1);
+.welcome-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  pointer-events: none; /* 이미지 클릭 방지 */
+}
+
+.start-button {
+  position: absolute;
+  bottom: 5%;           /* 이미지 안쪽에서 살짝 위 */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+
+.start-button:hover {
+  background-color: #0056b3;
 }
 
 /* 🗺️ 지도 전체를 배경처럼 보여줌 */
