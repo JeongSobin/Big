@@ -151,3 +151,7 @@ window.addEventListener('DOMContentLoaded', () => {
     showScreen('my-products-screen');
   });
 });
+  document.getElementById('qr-button')?.addEventListener('click', () => {
+    window.open('qr.png', '_blank'); // qr.png 새 창에서 열기!
+  });
+
