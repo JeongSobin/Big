@@ -157,11 +157,7 @@ function showProductDetail(key) {
 
 // … 중략 …
 
-// 클릭 시 키를 넘겨주는 부분
-document.querySelectorAll('#my-products-screen .product-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const key = item.getAttribute('data-product');
-    showProductDetail(key);
-  });
+document.getElementById('back-to-my-products')?.addEventListener('click', () => {
+  showScreen('my-products-screen');
 });
 
