@@ -62,6 +62,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   // ③ 회원가입 이미지 클릭
+ // ③ 회원가입 이미지 클릭 → check → open → 로그인(또는 자동로그인)으로 전환
   const signupImage = document.getElementById('signup-image');
   let clickCount = 0;
   signupImage?.addEventListener('click', () => {
@@ -71,9 +72,10 @@ window.addEventListener('DOMContentLoaded', () => {
     } else if (clickCount === 2) {
       signupImage.src = 'open.jpg';
     } else {
+      // 3회 클릭되었을 때: 이미지 순환 초기화 + 자동로그인
       clickCount = 0;
       signupImage.src = 'signup.jpeg';
-      showScreen('login-screen');
+      doLoginSuccess();
     }
   });
 
