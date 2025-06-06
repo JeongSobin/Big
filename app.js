@@ -151,6 +151,12 @@ window.addEventListener('DOMContentLoaded', () => {
     showScreen('my-products-screen');
   });
 });
+
+  // QR 보기 버튼 클릭 시 send.png 화면으로 전환
+  document.getElementById('qr-button')?.addEventListener('click', () => {
+    showScreen('send-screen');
+  });
+
   document.getElementById('qr-button')?.addEventListener('click', () => {
     window.open('qr.png', '_blank'); // qr.png 새 창에서 열기!
   });
