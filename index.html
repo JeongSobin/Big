@@ -178,6 +178,37 @@
     </section>
   </div>
 </div>
+
+
+<!-- ──────────────────────────────────────────────────────────────────── -->
+<!-- ⑧ 제품 상세 화면: product-detail-screen 추가 -->
+<div id="product-detail-screen" class="screen">
+  <div class="detail-container">
+    <!-- ⑧-1) 뒤로 돌아가기 헤더 -->
+    <div class="header">
+      <button id="back-to-my-products" class="back-btn">← 뒤로</button>
+      <span class="header-title">제품 상세 정보</span>
+    </div>
+
+    <!-- ⑧-2) 상세 이미지 -->
+    <div class="detail-image-wrapper">
+      <!-- 실제 보여줄 이미지는 JS에서 동적으로 바꿔줄 수 있습니다. -->
+      <img id="detail-image" src="" alt="제품 이미지" class="detail-image" />
+    </div>
+
+    <!-- ⑧-3) 상세 설명 -->
+    <div class="detail-info">
+      <h2 id="detail-name">제품 제목</h2>
+      <p id="detail-price" class="detail-price">₩0</p>
+      <p id="detail-loc" class="detail-loc">지역 정보</p>
+      <div id="detail-desc" class="detail-desc">
+        <!-- 예시 설명 텍스트 -->
+        제품에 대한 간단한 설명이 여기에 들어갑니다. 
+        노트북이라면 “16인치 고성능 노트북, 사양: i7/16GB/512GB SSD …” 등.
+      </div>
+    </div>
+  </div>
+</div>
   
 
   <!-- ✅ 공통 하단 네비게이션: 로그인 후만 보여짐 -->
