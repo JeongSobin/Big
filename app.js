@@ -75,15 +75,21 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ✅ ⑦ “내 상품 관리” 버튼 클릭
-  document.getElementById('manage-products-btn')?.addEventListener('click', () => {
+// ⑦ “내 상품 관리” 버튼 클릭 → my-products-screen 표시
+const manageBtn = document.getElementById('manage-products-btn');
+if (manageBtn) {
+  manageBtn.addEventListener('click', () => {
     showScreen('my-products-screen');
   });
+}
 
-  // ✅ ⑧ “← 뒤로” 버튼 클릭
-  document.getElementById('back-to-mypage')?.addEventListener('click', () => {
+// ⑧ “← 뒤로” 버튼 클릭 → mypage-screen으로 돌아가기
+const backBtn = document.getElementById('back-to-mypage');
+if (backBtn) {
+  backBtn.addEventListener('click', () => {
     showScreen('mypage-screen');
   });
+}
 
   // ✅ 빠른 매칭 팝업 열기
   document.querySelector('.quick-match-btn')?.addEventListener('click', () => {
