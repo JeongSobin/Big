@@ -6,7 +6,7 @@ function showScreen(id) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  const welcomeScreen = document.getElementById('welcome-screen');
+ const welcomeScreen = document.getElementById('welcome-screen');
 
   // ① '시작' 버튼 클릭 → welcome-screen을 완전히 숨기고 로그인으로 전환
   document.getElementById('start-button').addEventListener('click', () => {
@@ -89,6 +89,26 @@ document.querySelectorAll('.sort-btn').forEach(btn => {
 });
 
 
+  // ========================================
+  // ⑦ “내 상품 관리” 버튼 클릭 → my-products-screen 표시
+  // ========================================
+const manageBtn = document.getElementById('manage-products-btn');
+ if (manageBtn) {
+   manageBtn.addEventListener('click', () => {
+     showScreen('my-products-screen');
+    });
+  }
+
+  // ========================================
+  // ⑧ “← 뒤로” 버튼 클릭 → mypage-screen으로 돌아가기
+  // ========================================
+const backBtn = document.getElementById('back-to-mypage');
+if (backBtn) {
+  backBtn.addEventListener('click', () => {
+    showScreen('mypage-screen');
+  });
+}
+
 
 // ✅ 빠른 매칭 버튼 누르면 팝업 열기
 document.querySelector('.quick-match-btn')?.addEventListener('click', () => {
@@ -99,4 +119,5 @@ document.querySelector('.quick-match-btn')?.addEventListener('click', () => {
 document.getElementById('close-popup-btn')?.addEventListener('click', () => {
   document.getElementById('matching-popup').classList.add('hidden');
 });
+
 
