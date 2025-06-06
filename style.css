@@ -270,16 +270,31 @@ body {
   background: rgba(0, 123, 255, 1);
 }
 
-/* 전체 화면에 꽉 차지만 bottom-nav 영역은 비워줌 */
+/* 🗺️ 지도 전체를 배경처럼 보여줌 */
 #map-screen {
-  padding-bottom: 60px; /* nav 높이만큼 공간 확보 */
+  position: relative;
 }
 
 .full-map {
   width: 100%;
-  height: calc(100vh - 60px); /* 하단 nav를 가리지 않게 */
+  height: 100vh; /* 전체 화면 채움 */
   object-fit: cover;
   display: block;
+}
+
+/* ✅ 하단 네비를 항상 고정 & 위에 떠 있게 */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* 필요에 따라 조정 */
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999; /* 위에 뜨게 함 */
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
 }
 
 
