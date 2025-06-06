@@ -297,6 +297,49 @@ body {
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* 🗺️ map.png 위에 겹칠 수 있게 */
+.map-overlay {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  z-index: 998;
+}
+
+/* 🔍 검색바 */
+.map-search {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  outline: none;
+}
+
+/* ⚡ 빠른 매칭 버튼 */
+.quick-match-btn {
+  white-space: nowrap;
+  padding: 10px 16px;
+  font-size: 16px;
+  background-color: #ff5757;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.quick-match-btn:hover {
+  background-color: #e04545;
+}
+
+
 
 /* ───── 마이페이지 스타일 ───── */
 #mypage-screen {
