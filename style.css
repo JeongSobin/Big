@@ -151,21 +151,40 @@ body {
 /*                    메인 화면 광고 배너 정렬                    */
 /* ────────────────────────────────────────────────────────── */
 
-/* 메인 화면(#main-screen)에서만 적용되는 .advertisement */
-#main-screen .advertisement {
-  /* 전체 너비를 480px로 제한하고, 화면 중앙에 배치 */
-  max-width: 480px;
-  margin: 1rem auto;      /* 위아래 1rem 여백, 좌우 자동 중앙정렬 */
-  padding: 0 1rem;        /* 좌우 1rem 패딩을 주어 작은 기기에서도 여백 확보 */
-  box-sizing: border-box; /* 패딩 포함 너비 계산 */
+/* ① sort-buttons 컨테이너 */
+.sort-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 480px;   /* 메인 화면 너비와 동일하게 맞춤 */
+  margin: 1rem auto;  /* 상하 1rem 여백, 좌우 중앙 정렬 */
+  gap: 0.5rem;        /* 버튼 사이 간격 */
+  padding: 0 0.5rem;  /* 좌우 약간의 패딩을 주어 여유 확보 */
+  box-sizing: border-box;
 }
 
-/* 각 광고 배너 내부 텍스트 또는 이미지가 가운데 정렬되도록 유지 */
-#main-screen .advertisement p,
-#main-screen .advertisement img {
-  text-align: center;
-  width: 100%;
-  display: block;
+/* ② 개별 정렬 버튼 */
+.sort-btn {
+  flex: 1;                   /* 동일한 너비를 갖도록 설정 */
+  padding: 0.75rem 0;        /* 세로 0.75rem, 가로는 자동 */
+  background-color: #f0f0f0; /* 기본(비활성) 상태: 연회색 배경 */
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #555;               /* 비활성 텍스트 색상 */
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sort-btn:hover {
+  background-color: #e0e0e0; /* 버튼 호버 시 살짝 진한 회색 */
+}
+
+/* ③ 활성화된(active) 버튼 스타일 */
+.sort-btn.active {
+  background-color: #007bff; /* 파란색 배경 */
+  color: #fff;               /* 흰색 텍스트 */
 }
 
 /* ────────────────────────────────────────────────────────── */
