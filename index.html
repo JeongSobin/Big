@@ -287,36 +287,52 @@
   const sendScreen = document.getElementById("send-screen");
   const sendImage = document.getElementById("send-image");
   const allScreens = document.querySelectorAll(".screen");
-  const backToDetail = document.getElementById("back-to-detail"); // 복귀 버튼
+  const backToDetail = document.getElementById("back-to-detail");
+
+  // 현재 선택된 제품 타입 저장 변수
+  let currentProductType = "";
 
   function showScreen(screenId) {
     allScreens.forEach(screen => screen.classList.add("hidden"));
     document.getElementById(screenId).classList.remove("hidden");
   }
 
+  // QR 버튼 클릭 시
   qrBtn.addEventListener("click", () => {
     const name = detailName.innerText.trim();
 
+    // 제품명에 따라 QR 이미지 결정
     if (name.includes("노트북")) {
       sendImage.src = "send.png";
+      currentProductType = "노트북";
     } else if (name.includes("캠핑")) {
       sendImage.src = "Camp.png";
+      currentProductType = "캠핑용품";
     } else {
-      sendImage.src = "send.png";
+      sendImage.src = "send.png"; // 기본값
+      currentProductType = "기타";
     }
 
     showScreen("send-screen");
   });
 
+  // QR 이미지 클릭 시 제품에 따라 다른 QR 이미지로 전환
   sendImage.addEventListener("click", () => {
-    sendImage.src = "qr.png";
+    if (currentProductType === "노트북") {
+      sendImage.src = "noteqr.png";
+    } else if (currentProductType === "캠핑용품") {
+      sendImage.src = "campqr.png";
+    } else {
+      sendImage.src = "qr.png";
+    }
   });
 
-  // 🧭 복귀 버튼 누르면 다시 상세 화면으로
+  // 뒤로가기 버튼 클릭 시 상세 화면으로 이동
   backToDetail.addEventListener("click", () => {
     showScreen("product-detail-screen");
   });
 </script>
+
 
 
 
