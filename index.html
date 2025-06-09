@@ -308,11 +308,7 @@
     } else if (name.includes("캠핑")) {
       sendImage.src = "Camp.png";
       currentProductType = "캠핑용품";
-    } else {
-      sendImage.src = "send.png"; // 기본값
-      currentProductType = "기타";
-    }
-
+    } 
     showScreen("send-screen");
   });
 
@@ -322,9 +318,7 @@
       sendImage.src = "noteqr.png";
     } else if (currentProductType === "캠핑용품") {
       sendImage.src = "campqr.png";
-    } else {
-      sendImage.src = "qr.png";
-    }
+    } 
   });
 
   // 뒤로가기 버튼 클릭 시 상세 화면으로 이동
