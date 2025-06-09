@@ -158,24 +158,34 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// 현재 보고 있는 제품 이름을 저장 (예: URL이나 제품 데이터 기반으로 설정)
-const productType = "노트북"; // 또는 "캠핑용품"
+// 현재 선택된 제품 종류
+let currentProductType = "노트북"; // 기본값: 노트북
 
 // QR 이미지 요소
 const qrImage = document.getElementById("qr-image");
 
-// 버튼 클릭 시 QR 이미지 보여주기
+// "QR코드 보기" 버튼 클릭 시
 document.getElementById("show-qr").addEventListener("click", () => {
-  if (productType === "노트북") {
-    qrImage.src = "send.png"; // 노트북일 경우 send.png
-  } else if (productType === "캠핑용품") {
-    qrImage.src = "Camp.png"; // 캠핑용품일 경우 Camp.png
+  if (currentProductType === "노트북") {
+    qrImage.src = "send.png"; // 노트북은 send.png
+  } else if (currentProductType === "캠핑용품") {
+    qrImage.src = "Camp.png"; // 캠핑용품은 Camp.png
+  } else {
+    qrImage.src = "send.png"; // 기본 이미지
   }
-  qrImage.style.display = "block"; // 이미지 보이게 설정
+
+  qrImage.style.display = "block"; // 이미지 보여주기
 });
 
-// 이미지 클릭 시 qr.png로 바꾸기
+// 이미지 클릭 시 실제 QR로 바꾸기
 qrImage.addEventListener("click", () => {
-  qrImage.src = "qr.png"; // 클릭하면 qr.png로 변경
+  if (currentProductType === "노트북") {
+    qrImage.src = "noteqr.png";
+  } else if (currentProductType === "캠핑용품") {
+    qrImage.src = "campqr.png";
+  } else {
+    qrImage.src = "qr.png";
+  }
 });
+
 
