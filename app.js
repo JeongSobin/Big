@@ -162,7 +162,7 @@ window.addEventListener('DOMContentLoaded', () => {
 let currentProductType = "노트북"; // 기본값: 노트북
 
 // QR 이미지 요소
-const qrImage = document.getElementById("qr-image");
+const qrImage = document.getElementById("send-image");
 
 // "QR코드 보기" 버튼 클릭 시
 document.getElementById("show-qr").addEventListener("click", () => {
