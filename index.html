@@ -256,8 +256,23 @@
     </div>
   </div>
 
-  <!-- ✅ QR 중간 이미지 화면 (send.png) -->
+  <!-- ✅ QR 중간 이미지 화면 (send.png 또는 Camp.png) -->
   <div id="send-screen" class="screen">
+    <!-- 👇 복귀 버튼 -->
+    <button id="back-to-detail" style="
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    ">← 뒤로</button>
+  
+    <!-- 👇 이미지 (send.png, Camp.png, qr.png로 바뀜) -->
     <img
       id="send-image"
       src="send.png"
@@ -265,6 +280,44 @@
       style="width: 100vw; height: 100vh; object-fit: contain; cursor: pointer;"
     >
   </div>
+
+  <script>
+  const qrBtn = document.getElementById("qr-button");
+  const detailName = document.getElementById("detail-name");
+  const sendScreen = document.getElementById("send-screen");
+  const sendImage = document.getElementById("send-image");
+  const allScreens = document.querySelectorAll(".screen");
+  const backToDetail = document.getElementById("back-to-detail"); // 복귀 버튼
+
+  function showScreen(screenId) {
+    allScreens.forEach(screen => screen.classList.add("hidden"));
+    document.getElementById(screenId).classList.remove("hidden");
+  }
+
+  qrBtn.addEventListener("click", () => {
+    const name = detailName.innerText.trim();
+
+    if (name.includes("노트북")) {
+      sendImage.src = "send.png";
+    } else if (name.includes("캠핑")) {
+      sendImage.src = "Camp.png";
+    } else {
+      sendImage.src = "send.png";
+    }
+
+    showScreen("send-screen");
+  });
+
+  sendImage.addEventListener("click", () => {
+    sendImage.src = "qr.png";
+  });
+
+  // 🧭 복귀 버튼 누르면 다시 상세 화면으로
+  backToDetail.addEventListener("click", () => {
+    showScreen("product-detail-screen");
+  });
+</script>
+
 
 
 
