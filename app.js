@@ -170,9 +170,7 @@ document.getElementById("show-qr").addEventListener("click", () => {
     qrImage.src = "send.png"; // 노트북은 send.png
   } else if (currentProductType === "캠핑용품") {
     qrImage.src = "Camp.png"; // 캠핑용품은 Camp.png
-  } else {
-    qrImage.src = "send.png"; // 기본 이미지
-  }
+  } 
 
   qrImage.style.display = "block"; // 이미지 보여주기
 });
