@@ -165,7 +165,7 @@ let currentProductType = "노트북"; // 기본값: 노트북
 const qrImage = document.getElementById("send-image");
 
 // "QR코드 보기" 버튼 클릭 시
-document.getElementById("show-qr").addEventListener("click", () => {
+document.getElementById("qr-button").addEventListener("click", () => {
   if (currentProductType === "노트북") {
     qrImage.src = "send.png"; // 노트북은 send.png
   } else if (currentProductType === "캠핑용품") {
