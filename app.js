@@ -183,9 +183,7 @@ qrImage.addEventListener("click", () => {
     qrImage.src = "noteqr.png";
   } else if (currentProductType === "캠핑용품") {
     qrImage.src = "campqr.png";
-  } else {
-    qrImage.src = "qr.png";
-  }
+  } 
 });
 
 
