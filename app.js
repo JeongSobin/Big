@@ -158,30 +158,24 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// QR 보기 버튼 클릭 시 send.png 화면 → 클릭하면 qr.png → 다시 클릭하면 상품 상세로!
-document.getElementById('qr-button')?.addEventListener('click', () => {
-  showScreen('send-screen');
+// 현재 보고 있는 제품 이름을 저장 (예: URL이나 제품 데이터 기반으로 설정)
+const productType = "노트북"; // 또는 "캠핑용품"
 
-  requestAnimationFrame(() => {
-    const sendImage = document.getElementById('send-image');
+// QR 이미지 요소
+const qrImage = document.getElementById("qr-image");
 
-    if (sendImage) {
-      // 클릭 이벤트를 초기화하기 위해 이미지 새로 복제!
-      const newImage = sendImage.cloneNode(true);
-      sendImage.replaceWith(newImage);
-
-      let clickCount = 0;
-
-      newImage.addEventListener('click', () => {
-        clickCount++;
-
-        if (clickCount === 1) {
-          newImage.src = 'qr.png'; // 첫 클릭 → QR 이미지로 변경
-        } else if (clickCount === 2) {
-          clickCount = 0;
-          showScreen('product-detail-screen'); // 두 번째 클릭 → 상세 화면 복귀
-        }
-      });
-    }
-  });
+// 버튼 클릭 시 QR 이미지 보여주기
+document.getElementById("show-qr").addEventListener("click", () => {
+  if (productType === "노트북") {
+    qrImage.src = "send.png"; // 노트북일 경우 send.png
+  } else if (productType === "캠핑용품") {
+    qrImage.src = "Camp.png"; // 캠핑용품일 경우 Camp.png
+  }
+  qrImage.style.display = "block"; // 이미지 보이게 설정
 });
+
+// 이미지 클릭 시 qr.png로 바꾸기
+qrImage.addEventListener("click", () => {
+  qrImage.src = "qr.png"; // 클릭하면 qr.png로 변경
+});
+
