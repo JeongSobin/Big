@@ -133,6 +133,25 @@ window.addEventListener('DOMContentLoaded', () => {
   backBtn?.addEventListener('click', () => {
     showScreen('mypage-screen');
   });
+// ⑤ 판매·구매 탭 클릭 처리
+document.querySelectorAll('.tab-switch .tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    // active 토글
+    document.querySelectorAll('.tab-switch .tab')
+            .forEach(x => x.classList.remove('active'));
+    btn.classList.add('active');
+    
+    // 그리드 전환
+    const which = btn.getAttribute('data-tab');
+    if (which === 'sales') {
+      document.getElementById('sales-grid').classList.remove('hidden');
+      document.getElementById('purchase-grid').classList.add('hidden');
+    } else {
+      document.getElementById('sales-grid').classList.add('hidden');
+      document.getElementById('purchase-grid').classList.remove('hidden');
+    }
+  });
+});
 
   // ✅ 빠른 매칭 팝업 열기
   document.querySelector('.quick-match-btn')?.addEventListener('click', () => {
