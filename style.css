@@ -716,4 +716,44 @@ body {
   color: #333;
 }
 
+/* === 구매내역 스타일 === */
+.purchase-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  gap: 0.75rem;
+}
+.purchase-item .product-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.purchase-item .product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+/* 상태 배지 */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.status-complete {
+  background-color: #007bff;
+  color: #fff;
+}
+.status-using {
+  background-color: #00aaff;
+  color: #fff;
+}
+/* hidden 유틸 */
+.hidden { display: none !important; }
 /* ─────────────────────────────────────────────────────────────────── */
