@@ -124,14 +124,14 @@
         <img src="banner_ad.png" alt="광고 배너" class="ad-image" />
       </section>
 
-      <div class="tab-switch">
-        <button class="tab active">판매</button>
-        <button class="tab">구매</button>
-      </div>
+    <div class="tab-switch">
+      <button class="tab active" data-tab="sales">판매</button>
+      <button class="tab" data-tab="purchases">구매</button>
+    </div>
 
       <div class="section-title">올해 번 금액 <strong>0원</strong></div>
 
-      <div class="grid-menu">
+      <div id="sales-grid" class="grid-menu">
         <button id="manage-products-btn" class="grid-item">
           🏷️<span>내 상품 관리</span>
         </button>
@@ -141,6 +141,30 @@
         <div class="grid-item">💰<span>받은 가격제안</span></div>
         <div class="grid-item">🛍️<span>내 소품</span></div>
       </div>
+      <div id="purchase-grid" class="grid-menu hidden">
+      <!-- 예시 1 -->
+      <div class="purchase-item">
+        <img src="notebook.png" class="product-img" alt="노트북">
+        <div class="product-info">
+          <div class="product-name">노트북</div>
+          <div class="product-price">₩40,000(주)</div>
+          <div class="product-loc">대구 수성구</div>
+        </div>
+        <div class="status-badge status-complete">구매완료</div>
+      </div>
+      <!-- 예시 2 -->
+      <div class="purchase-item">
+        <img src="charger.png" class="product-img" alt="충전기">
+        <div class="product-info">
+          <div class="product-name">충전기</div>
+          <div class="product-price">2,000</div>
+          <div class="product-loc">대구 서구</div>
+        </div>
+        <div class="status-badge status-using">사용중</div>
+      </div>
+    </div>
+  </div>
+</div>
 
     </div>
   </div>
