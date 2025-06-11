@@ -716,22 +716,27 @@ body {
   color: #333;
 }
 
-/* === 구매내역 스타일 === */
-.purchase-item {
+/* 마이페이지 구매 항목 스타일 */
+#mypage-screen .product-list {
+  display: grid; /* 세로로 표시되도록 설정 */
+  grid-template-columns: 1fr; /* 각 상품이 한 줄을 차지하도록 설정 */
+  gap: 1rem; /* 상품 간 간격 */
+  width: 90%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+#mypage-screen .product-item {
   background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  display: flex;
-  align-items: center;
   padding: 0.75rem;
-  gap: 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* 세로로 배치 */
+  gap: 0.5rem;
+  align-items: center; /* 내용 중앙 정렬 */
 }
-.purchase-item .product-img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 4px;
-}
+
 .purchase-item .product-info {
   flex: 1;
   display: flex;
