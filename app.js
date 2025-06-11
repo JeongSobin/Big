@@ -106,6 +106,19 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // “사용중” 상태 클릭 시 팝업 띄우기
+document.querySelectorAll('.status-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('return-popup').classList.remove('hidden');
+  });
+});
+
+// 팝업 닫기
+document.getElementById('close-return-popup')?.addEventListener('click', () => {
+  document.getElementById('return-popup').classList.add('hidden');
+});
+
+  
   // ⑤ 정렬 버튼 클릭
   document.querySelectorAll('.sort-btn').forEach(btn => {
     btn.addEventListener('click', () => {
