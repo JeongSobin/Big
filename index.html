@@ -228,7 +228,7 @@
       <p id="detail-loc" class="detail-loc">지역 정보</p>
       <div id="detail-desc" class="detail-desc">
         <!-- 예시 설명 텍스트 -->
-        제품에 대한 간단한 설명이 여기에 들어갑니다. 
+        
         노트북이라면 “16인치 고성능 노트북, 사양: i7/16GB/512GB SSD …” 등.
       </div>
       <button id="qr-button" class="qr-button">QR코드 보기</button>
@@ -350,10 +350,13 @@
 </script>
 
 
-
-
-
-
+<!-- 반납 안내 팝업 -->
+<div id="return-popup" class="hidden popup-overlay">
+  <div class="popup-box">
+    <p class="popup-text">반납까지 3일 남았습니다.</p>
+    <button id="close-return-popup" class="popup-close-btn">확인</button>
+  </div>
+</div>
 
 
 </body>
