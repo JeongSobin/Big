@@ -762,8 +762,7 @@ body {
 /* hidden 유틸 */
 .hidden { display: none !important; }
 /* ─────────────────────────────────────────────────────────────────── */
-
-/* status popup */
+/* 상태 팝업 */
 .status-popup {
   position: fixed;
   top: 0; left: 0;
@@ -793,3 +792,4 @@ body {
   border-radius: 6px;
   cursor: pointer;
 }
+
