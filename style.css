@@ -757,7 +757,7 @@ body {
 }
 .status-using {
   background-color: #eee;
-  color: #fff;
+  color: #555;
 }
 /* hidden 유틸 */
 .hidden { display: none !important; }
