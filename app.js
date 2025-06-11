@@ -106,23 +106,22 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-window.addEventListener('DOMContentLoaded', () => {
-  // 1) "사용중" 배지를 클릭했을 때
+  // ▶ “사용중” 배지 클릭 시 팝업 열기
   document.querySelectorAll('.status-badge.status-using').forEach(badge => {
     badge.addEventListener('click', () => {
-      // 원하는 메시지로 세팅
-      document.getElementById('status-popup-message').textContent =
-        '반납까지 3일 남았습니다.';
-      // 팝업 보이기
+      // 반납까지 남은 일수는 data 속성에서 가져오도록 확장 가능
+      document.getElementById('status-popup-message').textContent = 
+        badge.dataset.remaining 
+          ? `반납까지 ${badge.dataset.remaining}일 남았습니다.` 
+          : '반납까지 3일 남았습니다.';
       document.getElementById('status-popup').classList.remove('hidden');
     });
   });
 
-  // 2) 팝업 닫기
+  // ▶ 팝업 닫기
   document.getElementById('close-status-popup').addEventListener('click', () => {
     document.getElementById('status-popup').classList.add('hidden');
   });
-});
 
 
   
