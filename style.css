@@ -756,8 +756,8 @@ body {
   color: #fff;
 }
 .status-using {
-  background-color: #eee;
-  color: #555;
+  background-color: #00aaff;
+  color: #fff;
 }
 /* hidden 유틸 */
 .hidden { display: none !important; }
