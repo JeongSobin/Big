@@ -106,17 +106,24 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // “사용중” 상태 클릭 시 팝업 띄우기
-document.querySelectorAll('.status-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.getElementById('return-popup').classList.remove('hidden');
+window.addEventListener('DOMContentLoaded', () => {
+  // 1) "사용중" 배지를 클릭했을 때
+  document.querySelectorAll('.status-badge.status-using').forEach(badge => {
+    badge.addEventListener('click', () => {
+      // 원하는 메시지로 세팅
+      document.getElementById('status-popup-message').textContent =
+        '반납까지 3일 남았습니다.';
+      // 팝업 보이기
+      document.getElementById('status-popup').classList.remove('hidden');
+    });
+  });
+
+  // 2) 팝업 닫기
+  document.getElementById('close-status-popup').addEventListener('click', () => {
+    document.getElementById('status-popup').classList.add('hidden');
   });
 });
 
-// 팝업 닫기
-document.getElementById('close-return-popup')?.addEventListener('click', () => {
-  document.getElementById('return-popup').classList.add('hidden');
-});
 
   
   // ⑤ 정렬 버튼 클릭
